@@ -3,20 +3,28 @@
 var restroomList = []; //stores all restroom instances
 var userRestrooms = []; //list of restrooms based on user specs
 
-function restroom(name, clean, size, accessibility, orientation, changingStation, dispensers, toiletPaper, code){
+function restroom(name, address, clean, singleS, multiS, size, accessibility,
+  genderN, changingStation, dispensers, toiletPaper){
   this.name = name;
-  this.clean = clean; //bool
+  this.address = address;
+  this.clean = clean;
+  this.singleStall = singleS; //bool
+  this.multiStall = multiS; //bool
   this.size = size;
   this.hAccess = accessibility; //bool
-  this.orientation = orientation; //array?
+  this.genderNeutral = genderN; //array?
   this.changingStation = changingStation; //bool
   this.dispensers = dispensers; //bool
   this.toiletPaper = toiletPaper;//bool
-  this.code = []//array holding bool, code (if applicable).
-  // this.location = location; //Stretch goal? Used for map data.
+  restroomList.push(this);
 }
 
-var userSpecs = {
+function user(username, reviews){
+  this.username = username;
+  this.numOfReviews = reviews;
+}
+
+var userSpecs = {//for form input
   onClick(){
     //get click event
   },
@@ -24,12 +32,23 @@ var userSpecs = {
     //get data from form input and put into new restroom object
   },
   setList(){
-    //take data from restroom object
+    //populate userRestrooms array
   },
   getList(){
-    //take data from restroom object
-  },
-  storeData(){
-    //store data into storage
+    //displays list to page
   },
 };
+
+// function saveData (){
+//   //store data into storage
+// }
+// function clearData(){
+//   //clears data from storage
+// };
+
+// function createSectionEl(){
+//   //creates Section element for bathroom list
+// }
+// function createPhotoEl(){
+//   //creates a photo element to append to section
+// }
