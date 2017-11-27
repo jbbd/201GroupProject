@@ -1,0 +1,59 @@
+html{
+  background-color: blue;
+}
+.about{
+  font-family: fantasy;
+  text-align: center;
+  text-shadow: 5px;
+  font-size: 20px;
+  margin-left: 350px;
+  margin-right: 350px;
+}
+
+li {
+  display: inline;
+  margin-left: 22%;
+}
+img {
+  max-width: 100px;
+  float: left;
+}
+
+h1{
+  font-size: 100px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  font-family: cursive;
+}
+
+sidebar {
+  float: left;
+  text-align: left;
+}
+
+a{
+  font-size: 20px;
+  color: red;
+  text-decoration: none;
+}
+
+#blogs {
+    text: white;
+    font-size: 20px;
+border-style: solid;
+  border-right: 10px;
+  /*border-left:10px;*/
+  border-color: rgb(100, 101, 102);
+  padding: 30px;
+}
+hr{
+  border-top: 20px;
+  color: red;
+}
+body {
+    color: white;
+}
+p{
+  max-width: 500px;
+}
