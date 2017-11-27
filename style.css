@@ -29,6 +29,7 @@ h1{
 
 sidebar {
   float: left;
+  text-align: left;
 }
 
 a{
