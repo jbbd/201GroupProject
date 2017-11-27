@@ -52,3 +52,13 @@ User Stories:
 • as a bathroom user I want to see bathrooms on a map so I can see where I can go
 
 • as a bathroom user with specific accessibility needs I want to be able to the filter bathrooms I see so that I only see the ones that meet my needs
+
+• as a user I want a way to prioritize between my needs, to mark some as critical and others as nice to have
+
+• as a user I want to see a list of results in order of best to worst match
+
+• as a user I'd like to be able to enter a location and see a list of nearby toilets, and then filter that list based on hours of operation, whither they were public or private and met certain accessibility needs
+
+• as a user I'd like to be able to enter my own restroom data, and leave reviews of places I've been
+
+• as a a user I'd like to be able to change my requirements and see the generated list update to reflect that
