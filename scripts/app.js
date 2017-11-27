@@ -3,7 +3,7 @@
 var restroomList = []; //stores all restroom instances
 var userRestrooms = []; //list of restrooms based on user specs
 
-function restroom(name, address, clean, singleS, multiS, size, accessibility,
+function Restroom(name, address, clean, singleS, multiS, size, accessibility,
   genderN, changingStation, dispensers, toiletPaper){
   this.name = name;
   this.address = address;
@@ -19,9 +19,35 @@ function restroom(name, address, clean, singleS, multiS, size, accessibility,
   restroomList.push(this);
 }
 
-function user(username, reviews){
+function user(username, totalReviews, review){
   this.username = username;
-  this.numOfReviews = reviews;
+  this.numOfReviews = totalReviews;
+  this.review = review;
+}
+//Hard coded - CHANGE WHEN NECESSARY
+new Restroom('Pike Place', '123 East Blah BLah', true, true, false, 'big', true,
+  true, false, true, true);
+new Restroom('Valhalla', '123 West gah gah', true, true, false, 'big', true,
+  true, false, true, true);
+new Restroom('Verona', '123 North cha cha', true, true, false, 'big', true,
+  true, false, true, true);
+new Restroom('Eorzea', '123 West gah gah', true, true, false, 'big', true,
+  true, false, true, true);
+new Restroom('Midgard', '123 North cha cha', true, true, false, 'big', true,
+  true, false, true, true);
+
+function createDiv(){
+  var newDiv = document.createElement('div');
+  // document.getElementById(APPEND TO PARENT)
+}
+function createList(){
+  var newList = document.createElement('ul');
+  return newList;
+}
+function createListItem(){
+  var newListItem = document.createElement('li');
+
+  return newListItem;
 }
 
 var userSpecs = {//for form input
