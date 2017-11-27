@@ -43,12 +43,12 @@ Example: As someone who is bathroom shy, I would like a bathroom that is for a s
 Example: as a person with diabetes I need to know whether I'll have privacy and a place to dispose of my needle safely
 
 User Stories:
-as a bathroom user I want to see bathrooms on a map so I can see where I can go
+• as a bathroom user I want to see bathrooms on a map so I can see where I can go
 
-as a bathroom user with specific accessibility needs I want to be able to the filter bathrooms I see so that I only see the ones that meet my needs
+• as a bathroom user with specific accessibility needs I want to be able to the filter bathrooms I see so that I only see the ones that meet my needs
 
-as a business we want to advertise the accessibility of our restrooms
+• as a business we want to advertise the accessibility of our restrooms
 
-as a bathroom user I want to see bathrooms on a map so I can see where I can go
+• as a bathroom user I want to see bathrooms on a map so I can see where I can go
 
-as a bathroom user with specific accessibility needs I want to be able to the filter bathrooms I see so that I only see the ones that meet my needs
+• as a bathroom user with specific accessibility needs I want to be able to the filter bathrooms I see so that I only see the ones that meet my needs
