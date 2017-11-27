@@ -39,16 +39,16 @@ new Restroom('Midgard', '123 North cha cha', true, true, false, 'big', true,
 function createDiv(list){//THIS TAKES A VARIABLE THAT STORES THE RESULT OF CREATELIST()
   var newDiv = document.createElement('div');
   newDiv.appendChild(list);
-  var blah = document.getElementById('container');
+  var blah = document.getElementById('hello');
   blah.appendChild(newDiv);
 }
 
 function createList(array){//THIS TAKES THE LIST ARRAY
-  var listEl = document.createElement('ul');
-  for (element in array){
-    var listItemEl = document.createElement('li');
-    listItemEl.textContent(array + ' : ' + element);
-    listEl.appendChild(listEl);
+  var listEl = document.createElement('ul');//creates unordered list
+  for (var i = 0; i < restroomList.length; i++){//for each item in the array...
+    var listItemEl = document.createElement('li');//create a list item
+    listItemEl.textContent = restroomList[i];//give that list item some text
+    listEl.appendChild(listItemEl);//append that list item to unordered list
   }
   return listEl;
 }
@@ -57,21 +57,6 @@ function test(){//testing
   var list = createList(restroomList);
   createDiv(list);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
