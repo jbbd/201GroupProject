@@ -36,34 +36,67 @@ new Restroom('Eorzea', '123 West gah gah', true, true, false, 'big', true,
 new Restroom('Midgard', '123 North cha cha', true, true, false, 'big', true,
   true, false, true, true);
 
-function createDiv(){
+function createDiv(list){//THIS TAKES A VARIABLE THAT STORES THE RESULT OF CREATELIST()
   var newDiv = document.createElement('div');
-  // document.getElementById(APPEND TO PARENT)
-}
-function createList(){
-  var newList = document.createElement('ul');
-  return newList;
-}
-function createListItem(){
-  var newListItem = document.createElement('li');
-
-  return newListItem;
+  newDiv.appendChild(list);
+  var blah = document.getElementById('container');
+  blah.appendChild(newDiv);
 }
 
-var userSpecs = {//for form input
-  onClick(){
-    //get click event
-  },
-  getInput(){
-    //get data from form input and put into new restroom object
-  },
-  setList(){
-    //populate userRestrooms array
-  },
-  getList(){
-    //displays list to page
-  },
-};
+function createList(array){//THIS TAKES THE LIST ARRAY
+  var listEl = document.createElement('ul');
+  for (element in array){
+    var listItemEl = document.createElement('li');
+    listItemEl.textContent(array + ' : ' + element);
+    listEl.appendChild(listEl);
+  }
+  return listEl;
+}
+//TESTING
+function test(){//testing
+  var list = createList(restroomList);
+  createDiv(list);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var userSpecs = {//for form input
+//   onClick(){
+//     //get click event
+//   },
+//   getInput(){
+//     //get data from form input and put into new restroom object
+//   },
+//   setList(){
+//     //populate userRestrooms array
+//   },
+//   getList(){
+//     //displays list to page
+//   },
+// };
 
 // function saveData (){
 //   //store data into storage
