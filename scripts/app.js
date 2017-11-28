@@ -36,27 +36,30 @@ new Restroom('Eorzea', '123 West gah gah', true, true, false, 'big', true,
 new Restroom('Midgard', '123 North cha cha', true, true, false, 'big', true,
   true, false, true, true);
 
-function createDiv(list){//THIS TAKES A VARIABLE THAT STORES THE RESULT OF CREATELIST()
-  var newDiv = document.createElement('div');
-  newDiv.appendChild(list);
+function createDiv(list){
   var blah = document.getElementById('hello');
-  blah.appendChild(newDiv);
+  for (var i = 0; i < list.length; i++){
+    var newDiv = document.createElement('div');
+    newDiv.appendChild(list[i]);
+    blah.appendChild(newDiv);
+  }
+
 }
-//NOTETHIS: APPEND LISTS TO DIV - CREATE MULTIPLE DIVS TO HOLD EACH ARRAY?
 function createList(array){//THIS TAKES THE LIST ARRAY
   var key;
+  var listArr = [];
   for (var i = 0; i < restroomList.length; i++){//for each item in the array...
     var listEl = document.createElement('ul');//create unordered list
     for (key in restroomList[i]){//For each key in the list...
       console.log(restroomList[i]);
       var listItemEl = document.createElement('li');//create a list item
-      listItemEl.textContent = restroomList[i].name;//Give that list item a key
+      listItemEl.textContent = restroomList[i][key];//Give that list item a key
       listEl.appendChild(listItemEl);
-    }
+    }listArr.push(listEl);
   }
-  return listEl;
+  return listArr;
 }
-//TESTING
+// Test to see if everything works.
 function test(){//testing
   var list = createList(restroomList);
   createDiv(list);
