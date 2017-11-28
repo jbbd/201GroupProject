@@ -46,6 +46,10 @@ User.prototype.printCustReview = function(){
   userCommentDiv.appendChild(userParEl);
   userComment.appendChild(userCommentDiv);
 };
+User.prototype.printEverything = function(){
+  this.printCustHeader();
+  this.printCustReview();
+}
 //Hard coded - CHANGE WHEN NECESSARY
 new Restroom('Pike Place', '123 East Blah BLah', true, true, false, 'big', true,
   true, false, true, true);
