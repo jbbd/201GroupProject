@@ -1,20 +1,4 @@
 html{
-
-  background-color: #21428F;
-}
-#search-form {
-  text-align: center;
-  padding-right: 70px;
-}
-#searchbar {
-  width: 275px;
-}
-button {
-  float: right;
-  position: absolute;
-
-  margin-left: 950px;
-  display: inline-block;
   background-color: blue;
 }
 .about{
@@ -25,8 +9,18 @@ button {
   margin-left: 350px;
   margin-right: 350px;
 }
-nav {
-  max-height: 50px;
+
+.blog1{
+  text-align: center;
+  margin-left: 500px;
+}
+.blog2{
+  text-align: center;
+  margin-left: 500px;
+}
+.blog3{
+  text-align: center;
+  margin-left: 0px;
 }
 
 li {
@@ -34,12 +28,6 @@ li {
   margin-left: 22%;
 }
 img {
-  max-width: 130px;
-  height: 130px;
-  position: absolute;
-  margin-top: 3%;
-  margin-left: 19%;
-  display: inline-block;
   max-width: 100px;
   float: left;
 }
@@ -50,7 +38,6 @@ h1{
   text-align: center;
   color: white;
   font-family: cursive;
-  max-width: auto;
 }
 
 sidebar {
@@ -58,21 +45,11 @@ sidebar {
   text-align: left;
 }
 
-a {
 a{
   font-size: 20px;
   color: red;
   text-decoration: none;
 }
-a:hover {
-  background-color: white;
-  border-radius: 5px;
-}
-
-#blogs {
-  text: white;
-  font-size: 20px;
-  border-style: solid;
 
 #blogs {
     text: white;
@@ -82,12 +59,6 @@ border-style: solid;
   /*border-left:10px;*/
   border-color: rgb(100, 101, 102);
   padding: 30px;
-
-}
-.avatar {
-  margin-left: 50px;
-  margin-top: 5px;
-
 }
 hr{
   border-top: 20px;
@@ -97,7 +68,5 @@ body {
     color: white;
 }
 p{
-  max-width: 750px;
-  padding-left: 250px;
   max-width: 500px;
 }
