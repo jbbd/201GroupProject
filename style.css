@@ -10,6 +10,19 @@ html{
   margin-right: 350px;
 }
 
+.blog1{
+  text-align: center;
+  margin-left: 500px;
+}
+.blog2{
+  text-align: center;
+  margin-left: 500px;
+}
+.blog3{
+  text-align: center;
+  margin-left: 0px;
+}
+
 li {
   display: inline;
   margin-left: 22%;
