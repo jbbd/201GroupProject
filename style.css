@@ -1,5 +1,4 @@
 html{
-
   background-color: #21428F;
 }
 #search-form {
@@ -15,7 +14,6 @@ button {
 
   margin-left: 950px;
   display: inline-block;
-  background-color: blue;
 }
 .about{
   font-family: fantasy;
@@ -28,7 +26,6 @@ button {
 nav {
   max-height: 50px;
 }
-
 li {
   display: inline;
   margin-left: 22%;
@@ -40,8 +37,6 @@ img {
   margin-top: 3%;
   margin-left: 19%;
   display: inline-block;
-  max-width: 100px;
-  float: left;
 }
 
 h1{
@@ -59,7 +54,6 @@ sidebar {
 }
 
 a {
-a{
   font-size: 20px;
   color: red;
   text-decoration: none;
@@ -73,11 +67,6 @@ a:hover {
   text: white;
   font-size: 20px;
   border-style: solid;
-
-#blogs {
-    text: white;
-    font-size: 20px;
-border-style: solid;
   border-right: 10px;
   /*border-left:10px;*/
   border-color: rgb(100, 101, 102);
@@ -87,7 +76,6 @@ border-style: solid;
 .avatar {
   margin-left: 50px;
   margin-top: 5px;
-
 }
 hr{
   border-top: 20px;
@@ -99,5 +87,4 @@ body {
 p{
   max-width: 750px;
   padding-left: 250px;
-  max-width: 500px;
 }
