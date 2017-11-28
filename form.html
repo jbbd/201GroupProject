@@ -43,20 +43,26 @@
           </li>
         </ul>
          <!-- something new from tabble to button tag yohanes  -->
-
-   <table id="table">
-     <form id="main-form">
-       <p>insert location below</p>
-       <label for="location">Location:
-       <input name="id" type="text"> <!--  enter location -->
-         <p>insert minimum sales below</p>
-         <!-- make this and the next three lines numbers not variables -->
-       <input name="min" type="number">
-         <p>insert maximum sales below</p>
-       <input name="max" type="number">
-         <p>insert average sales below</p>
-       <input name="avg" type="number">
-       <table> <!--- -->
+         <fieldset id="main-fieldset">
+             <form id="main-form">
+               <label>Store:</label>
+               <br>
+               <input type="text" name="storeName"><br>
+               <label>Minimum Customers:</label>
+               <br>
+               <!-- SUCCESS COMMENT OUT CODE!!! -->
+               <!-- <input type="number" name="minCust"><br>
+               <label>Maximum Customers:</label>
+               <br>
+               <input type="number" name="maxCust"><br>
+               <label>Average Cookies Sold:</label>
+                 <br>
+                 <input type="number" name="avgCookiesPerSale"><br> -->
+               <button type="submit">Submit</button>
+             </form>
+           </fieldset>
+           <h2>Sales for the Day</h2>
+           <table id='data'>
        <button type="submit">submit</button>
      </form>
     </main>
@@ -67,7 +73,7 @@
   </body>
 </html>
 <!-- jules work below -->
-<fieldset id="main-fieldset">
+<!-- <fieldset id="main-fieldset">
     <form id="main-form">
       <label>Store:</label>
       <br>
@@ -86,7 +92,7 @@
   </fieldset>
   <h2>Sales for the Day</h2>
   <table id='data'>
-  </table>
+  </ jules table above> -->
 <!-- <body>
   <main>
     <table id="table">

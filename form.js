@@ -72,101 +72,121 @@ function test(){//testing
 //   var elComment = document
 // }
 //salmon cookies. EDIT
-var stores = [];
-
-// CANNOT DELETE VAR HOURS
-var hours = ['6:00 AM', '7:00 AM', '8:00 AM', '9:00 AM', '10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM','7:00 PM','8:00 PM','Total'];
-
-function Store (id, min, max, avg){
-  this.id = id;
-  this.min = min;
-  this.max = max;
-  this.avg = avg;
+// function commentDisplay () {
+//   var commentSpace = document.createElement('div');
+//   var commentText = document.createElement('p');
+//   commentSpace.appendChild(commentText);
+//   console.log('comments', commentDisplay);
+// }
+//STORES ARRAY 'STORES' NEW INSTANCES OF STORE
+var stores = []; //NEED STORES ARRAY
+var grossHourly = []; //NEED GROSS HOURLY
+var hours = ['']; //NEED HOURS ARRAY
+function Store(name, minCust, maxCust, avgCookies) {
+  this.name = name;
+  this.hourlyCookies = [];
   stores.push(this);
+  this.getHourlyCookies();
 }
-console.log(Store);
-
-new Store ('1st and Pike', 23, 65, 6.3);
-new Store ('SeaTac Airport', 3, 24, 1.2);
-new Store ('Seattle Center', 11, 38, 3.7);
-new Store ('Capitol Hill', 20, 38, 2.3);
-new Store ('Alki', 2, 26, 1.2);
-
-Store.prototype.randomCust = function () {
-  return Math.round(Math.random() * (this.max - this.min)) + this.min;
-};
-stores [0].randomCust();
-
-Store.prototype.cookieCount = function () {
-  return Math.round(this.avg * this.randomCust());
-};
-stores [0].cookieCount();
-
-
-Store.header = function() {
-  var tblEl = document.getElementById('table');
-  var thead = document.createElement('thead');
-  tblEl.appendChild(thead);
-  tblEl.setAttribute('style','text-align:center;');
-  var trEl = document.createElement('tr');
-  thead.appendChild(trEl);
-  var tdEl = document.createElement('td');
-  //tdEl.setAttribute('style','text-align:center;','border: 1px solid white;');
-  tdEl.textContent = '';
-  trEl.appendChild(tdEl);
-  for(var i = 0; i <= 15; i++) {
-    tdEl = document.createElement('td');
-    //tdEl.setAttribute('style','text-align:center;');
-    var time = hours[i];
-    trEl.setAttribute('style','text-align:center;');
-    tdEl.textContent = time;
-    trEl.appendChild(tdEl);
-  }
-};
-Store.header();
-
-Store.prototype.tableContent = function() {
-  var cookiesDay = 0;
-  var tblEl = document.getElementById('table');
-  var tbody = document.createElement('tbody');
-  tblEl.appendChild(tbody);
-  var trEl = document.createElement('tr');
-  tbody.appendChild(trEl);
-  var tdEl = document.createElement('td');
-  tdEl.textContent = stores[k].id;
-  trEl.appendChild(tdEl);
-  for(var i = 0; i <= 15; i++) {
-    var cookieC = this.cookieCount();
-    cookiesDay += cookieC;
-    tdEl = document.createElement('td');
-    var cookies = cookieC;
-    tdEl.textContent = cookies;
-    trEl.appendChild(tdEl);
-  }
-  var dataTotal = document.createElement('td');
-  tdEl.textContent = cookiesDay;
-  tblEl.appendChild(dataTotal);
-};
-
-for(var k = 0; k < 5; k++){
-  stores [k].tableContent();
+//GET RANDOM NUMBER
+function getRandomNum(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
 }
-// lab-8
-var formEl = document.getElementById('main-form');
+
+//Instances
+Store.prototype.getHourlyCookies = function() {
+  // iterate over the hours array to do a thing for each hour
+  for(var i = 0; i < hours.length; i++) {
+    // create a number of cookies for each hour, push to array, and add to daily total
+    this.hourlyCookies.push(Math.floor(this.getCustomersPerHour() * this.avgCookies));
+    this.dailyTotal += this.hourlyCookies[i];
+  }
+  console.log(this.hourlyCookies);
+  return this.hourlyCookies;
+};
+Store.prototype.getCustomersPerHour = function() {
+  // returns a random number specific to the instance which called this method
+  return getRandomNum(this.minCust, this.maxCust);
+};
+
+//CREATES INSTANCES OF STORE
+//NEW STORES WITHOUT NEW VALUES WORK!!!
+new Store('1st and Pike');
+console.log(stores);
+createTable();
+
+//CREATE TABLES ----- TAKEN FROM SCOTT'S LAB BECAUSE I COULD NOT MAKE IT ANY BETTER
+function createTable() {
+  var tableEl = document.getElementById('data');
+  tableEl.appendChild(createTableHead());
+}
+
+function createTableHead() {
+  var theadEl = document.createElement('thead');
+  var headRow = createTableRow('', hours, 'Totals');
+  theadEl.appendChild(headRow);
+  return theadEl;
+}
+
+function createTableBody() {
+  var tbodyEl = document.createElement('tbody');
+
+  for(var k = 0; k < stores.length; k++) {
+    var bodyRow = createTableRow(stores[k].name, stores[k].hourlyCookies, stores[k].dailyTotal);
+    tbodyEl.appendChild(bodyRow);
+  }
+  return tbodyEl;
+}
+
+function createTableRow(verticalHeader, dataPoints, verticalFooter) {
+  var trEl = document.createElement('tr');
+  var tdElOne = document.createElement('td');
+  tdElOne.textContent = verticalHeader;
+  trEl.appendChild(tdElOne);
+  for(var j = 0; j < dataPoints.length; j++) {
+    var tdElTwo = document.createElement('td');
+    tdElTwo.textContent = dataPoints[j];
+    trEl.appendChild(tdElTwo);
+  }
+  var tdElThree = document.createElement('td');
+  tdElThree.textContent = verticalFooter;
+  trEl.appendChild(tdElThree);
+  return trEl;
+}
+
+var sectionEl = document.getElementById('main-form');
+
 
 function onSubmit(event) {
   event.preventDefault();
-  console.log('submit event', event.target.id.value);
-  console.log('the form was submitted');
-  var myFormData = {};
-  myFormData.id = event.target.id.value;
-  myFormData.min = event.target.min.value;
-  myFormData.max = event.target.max.value;
-  myFormData.avg = event.target.avg.value;
-
-  console.log('my form data', myFormData);
-  var newStore = new Store (myFormData.id, myFormData.min, myFormData.max, myFormData.avg);
-  newStore.tableContent();
+  console.log('Form filled');
+  var storeData = {
+  };
+  storeData.storeName = event.target.storeName.value;//get store name
+  // below adds new store name for new table row. aka new comment
+  var newStore = new Store(storeData.storeName);
+  // Append data to table
+  addRow(newStore.name, newStore.dailyTotal);
 }
 
-formEl.addEventListener('submit', onSubmit);
+function addRow(name, hourlyTotal, dailyTotal){
+  console.log('name', name);
+  var tRow = document.createElement('tr');//create table row
+  var tData = document.createElement('td');//create table data
+  tData.textContent = name;//create text content of store name name
+  tRow.appendChild(tData);//append name location to row
+
+  for (var i = 0; i < hourlyTotal.length; i++){
+    var tData2 = document.createElement('td');//create table data
+    tData2.textContent = hourlyTotal[i];//create text content of total
+    tRow.appendChild(tData2);//append table data to row
+  }
+  var tData3 = document.createElement('td');
+  tData3.textContent = dailyTotal;
+  tRow.appendChild(tData3);
+  document.getElementById('data').appendChild(tRow);
+
+  return tRow;
+}
+//EVENT LISTENER
+sectionEl.addEventListener('submit', onSubmit);
