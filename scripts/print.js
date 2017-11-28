@@ -46,15 +46,21 @@ new User('WestCoastBestCoast', 2, 'Lorem ipsum dolor sit amet, consectetur adipi
 new User('RowdyRuffGurl', 4, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
 new User('Lincoln-Logger', 5, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
 
-function printCust(){
+function printCustHeader(){
   var pCust = document.getElementById('user-info');
   for (var j = 0; j < restroomReview.length ; j++){
     var username = restroomReview[j].username;
     var numReviews = restroomReview[j].numOfReviews;
-    var newThing = document.createElement('li');
-    var userHeader = document.createTextNode ('NAME: ' + username + 'REVIEWS: ' + numReviews);
+    var userComment = restroomReview[j].review;
+    var newThing = document.createElement('h1');
+    var userHeader = document.createTextNode ('NAME: ' + username + ' REVIEWS: ' + numReviews);
+    var userComment = document.getElementById('user-comments');
+    var userParEl = document.createElement('p');
+    var userTextEl = document.createTextNode('Comments: ' + userComment);
     newThing.appendChild(userHeader);
     pCust.appendChild(newThing);
+    userParEl.appendChild(userTextEl);
+    userComment.appendChild(userParEl);
   }
 }
 
