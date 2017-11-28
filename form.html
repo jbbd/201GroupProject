@@ -1,0 +1,84 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>Go on the Go!</title>
+  <meta charset="utf-8">
+  </head>
+  <body>
+    <header>
+    </header>
+    <main>
+      <h2>Leave a Review!</h2>
+        <ul>
+          <li>Cleanliness
+            <input type='number' name='cleanliness' maxlength='1'/>
+          </li>
+          <li>Customers Only?
+            <select name='customers'>
+                <option value='true'>Yes</option>
+                <option value='false'>No</option>
+            </select>
+          </li>
+          <li>Single, multistall, or Both?
+            <select name='stalls'>
+              <option value='single-stall'>Single</option>
+              <option value='multi-stall'>Multistall</option>
+              <option value='both'>Both</option>
+            </select>
+          </li>
+          <li>Needle Disposal?
+            <select name='Disposal'>
+              <option value='true'>Yes</option>
+              <option value='false'>No</option>
+            </select>
+          </li>
+          <li>Handicap Accessibile?
+            <select name='hAccessible'>
+              <option value='true'>Yes</option>
+              <option value='false'>No</option>
+            </select>
+          </li>
+          <li>Stall Width?
+            <input type='number' name='stall-size'>
+          </li>
+        </ul>
+         <!-- something new from tabble to button tag yohanes  -->
+
+   <table id="table">
+     <form id="main-form">
+       <p>insert location below</p>
+       <label for="location">Location:
+       <input name="id" type="text"> <!--  enter location -->
+         <p>insert minimum sales below</p>
+         <!-- make this and the next three lines numbers not variables -->
+       <input name="min" type="number">
+         <p>insert maximum sales below</p>
+       <input name="max" type="number">
+         <p>insert average sales below</p>
+       <input name="avg" type="number">
+       <table> <!--- -->
+       <button type="submit">submit</button>
+     </form>
+    </main>
+    <footer>
+    </footer>
+    <script src="form.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+<!-- <body>
+  <main>
+    <table id="table">
+    </table>
+    <form id="main-form">
+      <p>insert location below</p>
+      <label for="location">Location:
+      <input name="id" type="text">
+      <button type="submit">submit</button>
+    </form>
+  </main>
+  <footer></footer>
+  <script src="app.js"></script>
+</body>
+</html>

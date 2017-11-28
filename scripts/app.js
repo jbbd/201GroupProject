@@ -74,7 +74,6 @@ function test(){//testing
 
 
 
-
 // var userSpecs = {//for form input
 //   onClick(){
 //     //get click event
