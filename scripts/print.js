@@ -29,18 +29,22 @@ function User(username, totalReviews, review, restroomName){
   console.log('what users do we have', restroomReview);
 }
 User.prototype.printCustHeader = function(){
-  var pCust = document.getElementById('user-info');
+  var pCust = document.getElementById('review-list');
+  var newHeaderEl = document.createElement('header');
   var newThing = document.createElement('h1');
   var userHeader = document.createTextNode ('NAME: ' + this.username + ' REVIEWS: ' + this.numOfReviews);
   newThing.appendChild(userHeader);
-  pCust.appendChild(newThing);
+  newHeaderEl.appendChild(newThing);
+  pCust.appendChild(newHeaderEl);
 };
 User.prototype.printCustReview = function(){
-  var userComment = document.getElementById('user-comments');
+  var userComment = document.getElementById('review-list');
+  var userCommentDiv = document.createElement('div');
   var userParEl = document.createElement('p');
   var userTextEl = document.createTextNode('Comments: ' + this.review);
   userParEl.appendChild(userTextEl);
-  userComment.appendChild(userParEl);
+  userCommentDiv.appendChild(userParEl);
+  userComment.appendChild(userCommentDiv);
 };
 //Hard coded - CHANGE WHEN NECESSARY
 new Restroom('Pike Place', '123 East Blah BLah', true, true, false, 'big', true,
