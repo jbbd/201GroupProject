@@ -23,8 +23,18 @@ button {
   margin-left: 350px;
   margin-right: 350px;
 }
-nav {
-  max-height: 50px;
+
+.blog1{
+  text-align: center;
+  margin-left: 500px;
+}
+.blog2{
+  text-align: center;
+  margin-left: 500px;
+}
+.blog3{
+  text-align: center;
+  margin-left: 0px;
 }
 li {
   display: inline;
@@ -45,7 +55,6 @@ h1{
   text-align: center;
   color: white;
   font-family: cursive;
-  max-width: auto;
 }
 
 sidebar {
