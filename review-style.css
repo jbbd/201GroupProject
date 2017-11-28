@@ -1,0 +1,47 @@
+article {
+
+}
+
+section {
+
+}
+
+figure {
+
+}
+ul {
+  list-style-type: none;
+}
+.left {
+  position: relative;
+  display: inline-block;
+  width: 20%;
+  float: left;
+}
+.center {
+  position: relative;
+  display: inline-block;
+  width: 49%;
+
+}
+.right {
+  position: relative;
+  display: inline-block;
+  width: 29%;
+  float: right;
+
+}
+.menu li {
+  display: inline;
+}
+img {
+  width: 300px;
+}
+#stats li {
+  display: block;
+
+}
+#user-info li {
+  display: inline;
+
+}
