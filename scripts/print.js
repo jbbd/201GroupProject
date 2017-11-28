@@ -20,11 +20,11 @@ function Restroom(name, address, clean, singleS, multiS, size, accessibility,
   restroomList.push(this);
 }
 
-function User(username, totalReviews, review, restroomName){
+function User(username, review){
   this.username = username;
-  this.numOfReviews = totalReviews;
+  //this.numOfReviews = totalReviews;MAKE STRETCH GOAL
   this.review = review;
-  this.restroomName = Restroom.name;
+  //this.restroomName = Restroom.name; MAKE STRETCH GOAL
   restroomReview.push(this);
   console.log('what users do we have', restroomReview);
 }
@@ -32,7 +32,7 @@ User.prototype.printCustHeader = function(){
   var pCust = document.getElementById('review-list');
   var newHeaderEl = document.createElement('header');
   var newThing = document.createElement('h1');
-  var userHeader = document.createTextNode ('NAME: ' + this.username + ' REVIEWS: ' + this.numOfReviews);
+  var userHeader = document.createTextNode ('NAME: ' + this.username);
   newThing.appendChild(userHeader);
   newHeaderEl.appendChild(newThing);
   pCust.appendChild(newHeaderEl);
