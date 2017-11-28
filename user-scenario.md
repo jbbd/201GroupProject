@@ -12,16 +12,16 @@ As an elderly person I need to know if there will be bars for me to hold on to
 
 as some one with out a lot of money, I need to know whether the bathroom is accessible with out purchasing something
 
- 
+
 as a person with diabetes I need to know whether I'll have privacy and a place to dispose of my needle safely
 
- 
+
 As a family with two small children we need to know if there's a family stall that we can go into as a group
 
- 
+
 As a parent I need to know if there is a fold down diaper changing station
 
- 
+
 As a person who gets frequent migranes I want to know if theres a quiet room and couch where I can lie down
 
 
