@@ -19,7 +19,7 @@ function Restroom(name, address, clean, singleS, multiS, size, accessibility,
   restroomList.push(this);
 }
 
-function user(username, totalReviews, review){
+function User(username, totalReviews, review){
   this.username = username;
   this.numOfReviews = totalReviews;
   this.review = review;
@@ -44,12 +44,16 @@ function createDiv(list){//THIS TAKES A VARIABLE THAT STORES THE RESULT OF CREAT
 }
 
 function createList(array){//THIS TAKES THE LIST ARRAY
-  var listEl = document.createElement('ul');//creates unordered list
   for (var i = 0; i < restroomList.length; i++){//for each item in the array...
-    var listItemEl = document.createElement('li');//create a list item
-    listItemEl.textContent = restroomList[i];//give that list item some text
-    listEl.appendChild(listItemEl);//append that list item to unordered list
-  }
+    var listEl = document.createElement('ul');//creates unordered list
+    listEl.textContent = restroomList[i].name;//give that list item some text
+
+    // for (var x = 0; x < restroomList[i].length; x++){
+    //   var listItemEl = document.createElement('li');//create a list item
+    //   listItemEl.textContent = restroomList[i];
+    //   listEl.appendChild(listItemEl);//append that list item to unordered list
+    // }
+  }listEl.appendChild
   return listEl;
 }
 //TESTING
