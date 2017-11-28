@@ -42,18 +42,18 @@ function createDiv(list){//THIS TAKES A VARIABLE THAT STORES THE RESULT OF CREAT
   var blah = document.getElementById('hello');
   blah.appendChild(newDiv);
 }
-
+//NOTETHIS: APPEND LISTS TO DIV - CREATE MULTIPLE DIVS TO HOLD EACH ARRAY?
 function createList(array){//THIS TAKES THE LIST ARRAY
+  var key;
   for (var i = 0; i < restroomList.length; i++){//for each item in the array...
-    var listEl = document.createElement('ul');//creates unordered list
-    listEl.textContent = restroomList[i].name;//give that list item some text
-
-    // for (var x = 0; x < restroomList[i].length; x++){
-    //   var listItemEl = document.createElement('li');//create a list item
-    //   listItemEl.textContent = restroomList[i];
-    //   listEl.appendChild(listItemEl);//append that list item to unordered list
-    // }
-  }listEl.appendChild
+    var listEl = document.createElement('ul');//create unordered list
+    for (key in restroomList[i]){//For each key in the list...
+      console.log(restroomList[i]);
+      var listItemEl = document.createElement('li');//create a list item
+      listItemEl.textContent = restroomList[i].name;//Give that list item a key
+      listEl.appendChild(listItemEl);
+    }
+  }
   return listEl;
 }
 //TESTING
