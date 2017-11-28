@@ -19,7 +19,7 @@ function Restroom(name, address, clean, singleS, multiS, size, accessibility,
   restroomList.push(this);
 }
 
-function user(username, totalReviews, review){
+function User(username, totalReviews, review){
   this.username = username;
   this.numOfReviews = totalReviews;
   this.review = review;
@@ -42,13 +42,17 @@ function createDiv(list){//THIS TAKES A VARIABLE THAT STORES THE RESULT OF CREAT
   var blah = document.getElementById('hello');
   blah.appendChild(newDiv);
 }
-
+//NOTETHIS: APPEND LISTS TO DIV - CREATE MULTIPLE DIVS TO HOLD EACH ARRAY?
 function createList(array){//THIS TAKES THE LIST ARRAY
-  var listEl = document.createElement('ul');//creates unordered list
+  var key;
   for (var i = 0; i < restroomList.length; i++){//for each item in the array...
-    var listItemEl = document.createElement('li');//create a list item
-    listItemEl.textContent = restroomList[i];//give that list item some text
-    listEl.appendChild(listItemEl);//append that list item to unordered list
+    var listEl = document.createElement('ul');//create unordered list
+    for (key in restroomList[i]){//For each key in the list...
+      console.log(restroomList[i]);
+      var listItemEl = document.createElement('li');//create a list item
+      listItemEl.textContent = restroomList[i].name;//Give that list item a key
+      listEl.appendChild(listItemEl);
+    }
   }
   return listEl;
 }
