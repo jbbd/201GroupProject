@@ -1,0 +1,88 @@
+'use strict';
+//Feel free to modify
+var restroomList = []; //stores all restroom instances
+var userRestrooms = []; //list of restrooms based on user specs
+var restroomReview = [];
+
+function Restroom(name, address, clean, singleS, multiS, size, accessibility,
+  genderN, changingStation, dispensers, toiletPaper){
+  this.name = name;
+  this.address = address;
+  this.clean = clean;
+  this.singleStall = singleS; //bool
+  this.multiStall = multiS; //bool
+  this.size = size;
+  this.hAccess = accessibility; //bool
+  this.genderNeutral = genderN; //array?
+  this.changingStation = changingStation; //bool
+  this.dispensers = dispensers; //bool
+  this.toiletPaper = toiletPaper;//bool
+  restroomList.push(this);
+}
+
+function User(username, totalReviews, review, restroomName){
+  this.username = username;
+  this.numOfReviews = totalReviews;
+  this.review = review;
+  this.restroomName = Restroom.name;
+  restroomReview.push(this);
+  console.log('what users do we have', restroomReview);
+}
+//Hard coded - CHANGE WHEN NECESSARY
+new Restroom('Pike Place', '123 East Blah BLah', true, true, false, 'big', true,
+  true, false, true, true);
+new Restroom('Valhalla', '123 West gah gah', true, true, false, 'big', true,
+  true, false, true, true);
+new Restroom('Verona', '123 North cha cha', true, true, false, 'big', true,
+  true, false, true, true);
+new Restroom('Eorzea', '123 West gah gah', true, true, false, 'big', true,
+  true, false, true, true);
+new Restroom('Midgard', '123 North cha cha', true, true, false, 'big', true,
+  true, false, true, true);
+
+//Hard coded users
+new User('tinkleBell', 2, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
+new User('WestCoastBestCoast', 2, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
+new User('RowdyRuffGurl', 4, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
+new User('Lincoln-Logger', 5, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
+
+function printCust(){
+  var pCust = document.getElementById('user-info');
+  for (var j = 0; j < restroomReview.length ; j++){
+    var username = restroomReview[j].username;
+    var numReviews = restroomReview[j].numOfReviews;
+    var newThing = document.createElement('li');
+    var userHeader = document.createTextNode ('NAME: ' + username + 'REVIEWS: ' + numReviews);
+    newThing.appendChild(userHeader);
+    pCust.appendChild(newThing);
+  }
+}
+
+function createDiv(list){
+  var blah = document.getElementById('hello');
+  for (var i = 0; i < list.length; i++){
+    var newDiv = document.createElement('div');
+    newDiv.appendChild(list[i]);
+    blah.appendChild(newDiv);
+  }
+
+}
+function createList(array){//THIS TAKES THE LIST ARRAY
+  var key;
+  var listArr = [];
+  for (var i = 0; i < restroomList.length; i++){//for each item in the array...
+    var listEl = document.createElement('ul');//create unordered list
+    for (key in restroomList[i]){//For each key in the list...
+      console.log(restroomList[i]);
+      var listItemEl = document.createElement('li');//create a list item
+      listItemEl.textContent = restroomList[i][key];//Give that list item a key
+      listEl.appendChild(listItemEl);
+    }listArr.push(listEl);
+  }
+  return listArr;
+}
+// Test to see if everything works.
+function test(){//testing
+  var list = createList(restroomList);
+  createDiv(list);
+}
