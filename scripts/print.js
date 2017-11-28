@@ -3,6 +3,7 @@
 var restroomList = []; //stores all restroom instances
 var userRestrooms = []; //list of restrooms based on user specs
 var restroomReview = [];
+var loremIpsum = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ';
 
 function Restroom(name, address, clean, singleS, multiS, size, accessibility,
   genderN, changingStation, dispensers, toiletPaper){
@@ -20,11 +21,11 @@ function Restroom(name, address, clean, singleS, multiS, size, accessibility,
   restroomList.push(this);
 }
 
-function User(username, review){
+function User(username, review, restroomName){
   this.username = username;
   //this.numOfReviews = totalReviews;MAKE STRETCH GOAL
   this.review = review;
-  //this.restroomName = Restroom.name; MAKE STRETCH GOAL
+  this.restroomName = restroomName;
   restroomReview.push(this);
   console.log('what users do we have', restroomReview);
 }
@@ -32,7 +33,7 @@ User.prototype.printCustHeader = function(){
   var pCust = document.getElementById('review-list');
   var newHeaderEl = document.createElement('header');
   var newThing = document.createElement('h1');
-  var userHeader = document.createTextNode ('NAME: ' + this.username);
+  var userHeader = document.createTextNode ('NAME: ' + this.username + '  Location: ' + this.restroomName);
   newThing.appendChild(userHeader);
   newHeaderEl.appendChild(newThing);
   pCust.appendChild(newHeaderEl);
@@ -63,10 +64,10 @@ new Restroom('Midgard', '123 North cha cha', true, true, false, 'big', true,
   true, false, true, true);
 
 //Hard coded users
-new User('tinkleBell', 2, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-new User('WestCoastBestCoast', 2, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-new User('RowdyRuffGurl', 4, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-new User('Lincoln-Logger', 5, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
+new User('tinkleBell', loremIpsum, restroomList[2].name);
+new User('WestCoastBestCoast', loremIpsum, restroomList[2].name);
+new User('RowdyRuffGurl', loremIpsum, restroomList[1].name);
+new User('Lincoln-Logger', loremIpsum, restroomList[3].name );
 
 // function printCustHeader(){
 //   var pCust = document.getElementById('user-info');
