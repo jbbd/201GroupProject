@@ -18,6 +18,7 @@ function Restroom(name, address, clean, customersOnly, needles, singleS, multiS,
   this.dispensers = dispensers; //bool
   this.toiletPaper = toiletPaper;//bool
   restroomList.push(this);
+  userRestrooms.push(this);
 }
 
 function User(username, totalReviews, review){
@@ -87,6 +88,9 @@ function onSubmit(event) {
 
   userRestrooms.push(new Restroom(form.newName, form.newAddress, form.newClean, form.newCust, form.newNeedleDis, form.newSingleS, form.newMultiS, form.newSize, form.newAccessibility, form.newGenderN, form.newChangingStation, form.newDispensers, form.newToiletPaper));
   console.log('fuuuuckyou', userRestrooms);
+  localStorage.setItem('userRestrooms', JSON.stringify(userRestrooms));
+  userRestrooms.push(JSON.parse(localStorage.getItem('userRestrooms')));
+
 
   //get click event
 }
