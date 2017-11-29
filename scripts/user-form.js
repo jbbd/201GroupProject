@@ -10,7 +10,7 @@ function onSubmit(event) {
   event.preventDefault();
   console.log('form filled');
 
-  var userName = event.target.storeName.value;
+  var userName = event.target.userName.value;
   var userComment = event.target.userComment.value;
   var newUser = new User (userName, userComment);
   userArray.push(newUser);
