@@ -8,7 +8,9 @@ function User(username, review, location, rating){
   this.location = location;
   this.rating = rating;
   userArray.push(this);
+  this.getUserRating();
 }
+
 
 function onSubmit(event) {
   event.preventDefault();
