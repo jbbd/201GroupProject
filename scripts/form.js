@@ -91,6 +91,7 @@ function onSubmit(event) {
   localStorage.setItem('userRestrooms', JSON.stringify(userRestrooms));
   userRestrooms.push(JSON.parse(localStorage.getItem('userRestrooms')));
 
+
   //get click event
 }
 formEl.addEventListener('submit', onSubmit);
