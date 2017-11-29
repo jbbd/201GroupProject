@@ -7,6 +7,7 @@ function User(username, review, location, rating){
   this.review = review;
   this.location = location;
   this.rating = rating;
+  userArray.push(this);
 }
 
 function onSubmit(event) {
@@ -19,6 +20,9 @@ function onSubmit(event) {
   var userRating = event.target.userRating.value;
   var newUser = new User (userName, userComment, userLocation, userRating);
   userArray.push(newUser);
+
+  localStorage.setItem('userArray', JSON.stringify(userArray));
+  userArray.push(JSON.parse(localStorage.getItem('userArray')));
 
   console.log ('user array: ', userArray);
 }
