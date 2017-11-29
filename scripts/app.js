@@ -21,22 +21,20 @@ function Restroom(name, address, clean, singleS, multiS, size, accessibility,
   restroomList.push(this);
   this.setTotalRatings();
 }
-
 Restroom.prototype.setTotalRatings = function(){
   var total;
   for (var x in this.userRatings){total += x;}
   this.totalRating = total;
 };
-
 function User(username, storeName, rating, totalReviews, review){
   this.username = username;
   this.storeName = storeName;
-  this.rating = rating;//Tues, Nov 28.
+  this.rating = rating;
   this.numOfReviews = totalReviews;
   this.review = review;
-  getUserRatings();
+  this.getUserRating();
 }
-User.prototype.getUserRatings = function(){
+User.prototype.getUserRating = function(){
   for (var i = 0; i < restroomList.length; i++){
     if (restroomList[i].name === this.storeName){//if (instance.name === user store name input)
       restroomList[i].userRatings.push(this.rating);//push user rating to instance.userRatings array
@@ -80,7 +78,7 @@ function createList(array){//THIS TAKES THE LIST ARRAY
   return listArr;
 }
 // Test to see if everything works.
-function test(){//testing
+function test(){
   var list = createList(restroomList);
   createDiv(list);
 }
