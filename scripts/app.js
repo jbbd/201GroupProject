@@ -36,6 +36,7 @@ new Restroom('Eorzea', '123 West gah gah', true, true, false, 'big', true,
 new Restroom('Midgard', '123 North cha cha', true, true, false, 'big', true,
   true, false, true, true);
 
+
 function createDiv(list){//THIS TAKES A VARIABLE THAT STORES THE RESULT OF CREATELIST()
   var newDiv = document.createElement('div');
   newDiv.appendChild(list);
@@ -61,15 +62,6 @@ function test(){//testing
   var list = createList(restroomList);
   createDiv(list);
 }
-
-
-
-
-
-
-
-
-
 
 
 // var userSpecs = {//for form input
