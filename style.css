@@ -98,3 +98,13 @@ p{
   max-width: 750px;
   padding-left: 250px;
 }
+label {
+  display: block;
+}
+input {
+  max-width: 200px;
+  display: block;
+}
+select {
+  display: block;
+}
