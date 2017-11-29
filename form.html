@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Go on the Go!</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+    </header>
+    <main>
+      <h2>Leave a Review!</h2>
+
+        <form id="hello">
+          <label class="labels">Name: </label>
+            <input class="textbox" name="newName"/>
+          <label class="labels">Address: </label>
+            <input class="textbox" name="newAddress"/>
+          <label class="labels">Cleanliness:</label>
+            <input class="textbox" name="newClean" type="number" name="cleanliness" maxlength="1"/>
+          <label>Customers Only: </label>
+            <select name="customers">
+                <option value="none">Choose</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+
+          <label>Single, multistall, or Both: </label>
+            <select name="stallsChoice">
+              <option value="none">Choose</option>
+              <option value="single-stall">Single</option>
+              <option value="multi-stall">Multistall</option>
+              <option value="both">Both</option>
+            </select>
+
+          <label>Needle Disposal:</label>
+            <select name="needles">
+              <option value="none">Choose</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+
+          <label>Handicap Accessibile:</label>
+            <select name="handicap">
+              <option value="none">Choose</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+
+          <label>Stall Width:</label>
+            <input type="number" name="stallSize">
+
+          <label>Baby changing station:</label>
+            <select name="changingStation">
+              <option value="none">Choose</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+
+          <label>Toilet Paper:</label>
+            <select name="toiletPaper">
+              <option value="none">Choose</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+
+          <label>Gender Neutral:</label>
+            <select name="genderN">
+              <option value="none">Choose</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+
+          <label>Dispensers: </label>
+            <select name="dispensers">
+              <option value="none">Choose</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+
+        </ul>
+      <button id="submit" type="submit">Submit!</button>
+    </form>
+    </main>
+    <footer>
+    </footer>
+    <script src="scripts/form.js"></script>
+  </body>
+</html>
