@@ -1,7 +1,7 @@
 'use strict';
 //Feel free to modify
 var restroomList = []; //stores all restroom instances
-var userRestrooms = []; //list of restrooms based on user specs
+//var userRestrooms = []; //list of restrooms based on user specs
 var restroomReview = [];
 var loremIpsum = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ';
 
@@ -30,6 +30,7 @@ function User(username, review, restroomName){
   restroomReview.push(this);
   console.log('what users do we have', restroomReview);
 }
+//USER METHODS
 User.prototype.printCustHeader = function(){
   var pCust = document.getElementById('review-list');
   var newHeaderEl = document.createElement('header');
@@ -52,7 +53,7 @@ User.prototype.printEverything = function(){
   this.printCustHeader();
   this.printCustReview();
 };
-
+//RESTROOM METHODS
 Restroom.prototype.printRestroomHeader = function(){
   var getSection = document.getElementById('restroomStats');
   var headerEl = document.createElement('header');
@@ -62,13 +63,14 @@ Restroom.prototype.printRestroomHeader = function(){
   headerEl.appendChild(header);
   getSection.appendChild(headerEl);
 };
-Restroom.prototype.printRestroomStats = function(){
+Restroom.prototype.printRestroomStats = function(name, key){
   //var textEl = this.printRestroomItem(this.address);
   var restroomStats = document.getElementById('restroomStats');
   //for (var i = 0; i < restroomList.length; i++){
   var listEl = document.createElement('ul');//create unordered list
   restroomStats.appendChild(listEl);
-  listEl.appendChild(this.printRestroomItem(this.address));
+  listEl.appendChild(this.printRestroomItem(name));
+  listEl.appendChild(this.printRestroomItem(key));
 };
 
 Restroom.prototype.printRestroomItem = function (key) {
@@ -77,18 +79,6 @@ Restroom.prototype.printRestroomItem = function (key) {
   return listItemEl.appendChild(textEl);
 };
 
-function createStats(list){
-  var blah = document.getElementById('review');
-  for (var i = 0; i < list.length; i++){
-    var newDiv = document.createElement('div');
-    newDiv.appendChild(list[i]);
-    blah.appendChild(newDiv);
-  }
-}
-
-Restroom.prototype.printEverything = function(){
-  this.printRestroomHeader();
-};
 
 //Hard coded - CHANGE WHEN NECESSARY
 new Restroom('Pike Place', '123 East Blah BLah', true, true, false, 'big', true,
@@ -123,31 +113,31 @@ new User('Lincoln-Logger', loremIpsum, restroomList[3].name );
 //   userComment.appendChild(userParEl);
 // }
 
-function createDiv(list){
-  var blah = document.getElementById('restroomStats');
-  for (var i = 0; i < list.length; i++){
-    var newDiv = document.createElement('div');
-    newDiv.appendChild(list[i]);
-    blah.appendChild(newDiv);
-  }
-
-}
-function createList(array){//THIS TAKES THE LIST ARRAY
-  var key;
-  var listArr = [];
-  for (var i = 0; i < array.length; i++){//for each item in the array...
-    var listEl = document.createElement('ul');//create unordered list
-    for (key in restroomList[i]){//For each key in the list...
-      console.log(restroomList[i]);
-      var listItemEl = document.createElement('li');//create a list item
-      listItemEl.textContent = restroomList[i][key];//Give that list item a key
-      listEl.appendChild(listItemEl);
-    }listArr.push(listEl);
-  }
-  return listArr;
-}
-// Test to see if everything works.
-function test(){//testing
-  var list = createList(restroomList);
-  createDiv(list);
-}
+// function createDiv(list){
+//   var blah = document.getElementById('restroomStats');
+//   for (var i = 0; i < list.length; i++){
+//     var newDiv = document.createElement('div');
+//     newDiv.appendChild(list[i]);
+//     blah.appendChild(newDiv);
+//   }
+//
+// }
+// function createList(array){//THIS TAKES THE LIST ARRAY
+//   var key;
+//   var listArr = [];
+//   for (var i = 0; i < array.length; i++){//for each item in the array...
+//     var listEl = document.createElement('ul');//create unordered list
+//     for (key in restroomList[i]){//For each key in the list...
+//       console.log(restroomList[i]);
+//       var listItemEl = document.createElement('li');//create a list item
+//       listItemEl.textContent = restroomList[i][key];//Give that list item a key
+//       listEl.appendChild(listItemEl);
+//     }listArr.push(listEl);
+//   }
+//   return listArr;
+// }
+// // Test to see if everything works.
+// function test(){//testing
+//   var list = createList(restroomList);
+//   createDiv(list);
+// }
