@@ -1,5 +1,4 @@
 'use strict';
-//Feel free to modify
 var restroomList = []; //stores all restroom instances
 var userRestrooms = []; //list of restrooms based on user specs
 
@@ -16,30 +15,50 @@ function Restroom(name, address, clean, singleS, multiS, size, accessibility,
   this.changingStation = changingStation;
   this.dispensers = dispensers;
   this.toiletPaper = toiletPaper;
-  this.userRatings = [];//push user ratings to this array
-  this.totalRating;//take userRatings and average
+  this.userRatings = [];
+  this.totalRating = 0;
   restroomList.push(this);
-  this.setTotalRatings();
 }
 Restroom.prototype.setTotalRatings = function(){
-  var total;
-  for (var x in this.userRatings){total += x;}
-  this.totalRating = total;
+  var total = 0;
+  for (var x = 0; x < this.userRatings.length; x++){
+    total += this.userRatings[x];
+    console.log('total', total);
+  }
+  this.totalRating = total / this.userRatings.length;
 };
-function User(username, storeName, rating, totalReviews, review){
-  this.username = username;
-  this.storeName = storeName;
-  this.rating = rating;
-  this.numOfReviews = totalReviews;
-  this.review = review;
-  this.getUserRating();
-}
+// function User(username, review, location, rating){
+//   this.username = username;
+//   this.review = review;
+//   this.location = location;
+//   this.rating = rating;
+//   userArray.push(this);
+//   this.getUserRating();
+// }
 User.prototype.getUserRating = function(){
   for (var i = 0; i < restroomList.length; i++){
-    if (restroomList[i].name === this.storeName){//if (instance.name === user store name input)
-      restroomList[i].userRatings.push(this.rating);//push user rating to instance.userRatings array
+    if (restroomList[i].name === this.location){
+      var rating = parseInt(this.rating);
+      restroomList[i].userRatings.push(rating);
+      restroomList[i].setTotalRatings();
     }
   }
+};
+
+
+
+User.prototype.createList = function(array){//THIS TAKES THE LIST ARRAY
+  var key;
+  for (var i = 0; i < restroomList.length; i++){//for each item in the array...
+    var listEl = document.createElement('ul');//create unordered list
+    for (key in restroomList[i]){//For each key in the list...
+      console.log(restroomList[i]);
+      var listItemEl = document.createElement('li');//create a list item
+      listItemEl.textContent = restroomList[i].name;//Give that list item a key
+      listEl.appendChild(listItemEl);
+    }
+  }
+  return listEl;
 };
 
 //Hard coded - CHANGE WHEN NECESSARY
@@ -61,49 +80,8 @@ function createDiv(list){//THIS TAKES A VARIABLE THAT STORES THE RESULT OF CREAT
   var blah = document.getElementById('hello');
   blah.appendChild(newDiv);
 }
-//NOTETHIS: APPEND LISTS TO DIV - CREATE MULTIPLE DIVS TO HOLD EACH ARRAY?
-function createList(array){//THIS TAKES THE LIST ARRAY
-  var key;
-  for (var i = 0; i < restroomList.length; i++){//for each item in the array...
-    var listEl = document.createElement('ul');//create unordered list
-    for (key in restroomList[i]){//For each key in the list...
-      console.log(restroomList[i]);
-      var listItemEl = document.createElement('li');//create a list item
-      listItemEl.textContent = restroomList[i].name;//Give that list item a key
-      listEl.appendChild(listItemEl);
-    }
-  }
-  return listEl;
-}
+
 function test(){//testing
   var list = createList(restroomList);
   createDiv(list);
 }
-// var userSpecs = {//for form input
-//   onClick(){
-//     //get click event
-//   },
-//   getInput(){
-//     //get data from form input and put into new restroom object
-//   },
-//   setList(){
-//     //populate userRestrooms array
-//   },
-//   getList(){
-//     //displays list to page
-//   },
-// };
-
-// function saveData (){
-//   //store data into storage
-// }
-// function clearData(){
-//   //clears data from storage
-// };
-
-// function createSectionEl(){
-//   //creates Section element for bathroom list
-// }
-// function createPhotoEl(){
-//   //creates a photo element to append to section
-// }
