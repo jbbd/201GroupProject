@@ -8,22 +8,40 @@ function Restroom(name, address, clean, singleS, multiS, size, accessibility,
   this.name = name;
   this.address = address;
   this.clean = clean;
-  this.singleStall = singleS; //bool
-  this.multiStall = multiS; //bool
+  this.singleStall = singleS;
+  this.multiStall = multiS;
   this.size = size;
-  this.hAccess = accessibility; //bool
-  this.genderNeutral = genderN; //array?
-  this.changingStation = changingStation; //bool
-  this.dispensers = dispensers; //bool
-  this.toiletPaper = toiletPaper;//bool
+  this.hAccess = accessibility;
+  this.genderNeutral = genderN;
+  this.changingStation = changingStation;
+  this.dispensers = dispensers;
+  this.toiletPaper = toiletPaper;
+  this.userRatings = [];//push user ratings to this array
+  this.totalRating;//take userRatings and average
   restroomList.push(this);
+  this.setTotalRatings();
 }
-
-function User(username, totalReviews, review){
+Restroom.prototype.setTotalRatings = function(){
+  var total;
+  for (var x in this.userRatings){total += x;}
+  this.totalRating = total;
+};
+function User(username, storeName, rating, totalReviews, review){
   this.username = username;
+  this.storeName = storeName;
+  this.rating = rating;
   this.numOfReviews = totalReviews;
   this.review = review;
+  this.getUserRating();
 }
+User.prototype.getUserRating = function(){
+  for (var i = 0; i < restroomList.length; i++){
+    if (restroomList[i].name === this.storeName){//if (instance.name === user store name input)
+      restroomList[i].userRatings.push(this.rating);//push user rating to instance.userRatings array
+    }
+  }
+};
+
 //Hard coded - CHANGE WHEN NECESSARY
 new Restroom('Pike Place', '123 East Blah BLah', true, true, false, 'big', true,
   true, false, true, true);
@@ -57,13 +75,10 @@ function createList(array){//THIS TAKES THE LIST ARRAY
   }
   return listEl;
 }
-//TESTING
 function test(){//testing
   var list = createList(restroomList);
   createDiv(list);
 }
-
-
 // var userSpecs = {//for form input
 //   onClick(){
 //     //get click event
