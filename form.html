@@ -2,49 +2,89 @@
 <html>
   <head>
     <title>Go on the Go!</title>
-    <link rel="" href="">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <header>
     </header>
     <main>
       <h2>Leave a Review!</h2>
-        <ul>
-          <li>Cleanliness
-            <input type='number' name='cleanliness' maxlength='1'/>
-          </li>
-          <li>Customers Only?
-            <select name='customers'>
-                <option value='true'>Yes</option>
-                <option value='false'>No</option>
+
+        <form id="hello">
+          <label>Name:
+            <input name="newName"/>
+          </label>
+          <label>Address:
+            <input name="newAddress"/>
+          </label>
+          <label>Cleanliness:
+            <input name="newClean" type="number" name="cleanliness" maxlength="1"/>
+          </label>
+          <label>Customers Only:
+            <select name="customers">
+                <option value="none">Choose</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
             </select>
-          </li>
-          <li>Single, multistall, or Both?
-            <select name='stalls'>
-              <option value='single-stall'>Single</option>
-              <option value='multi-stall'>Multistall</option>
-              <option value='both'>Both</option>
+          </label>
+          <label>Single, multistall, or Both:
+            <select name="stallsChoice">
+              <option value="none">Choose</option>
+              <option value="single-stall">Single</option>
+              <option value="multi-stall">Multistall</option>
+              <option value="both">Both</option>
             </select>
-          </li>
-          <li>Needle Disposal?
-            <select name='Disposal'>
-              <option value='true'>Yes</option>
-              <option value='false'>No</option>
+          </label>
+          <label>Needle Disposal:
+            <select name="needles">
+              <option value="none">Choose</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
             </select>
-          </li>
-          <li>Handicap Accessibile?
-            <select name='hAccessible'>
-              <option value='true'>Yes</option>
-              <option value='false'>No</option>
+          </label>
+          <label>Handicap Accessibile:
+            <select name="handicap">
+              <option value="none">Choose</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
             </select>
-          </li>
-          <li>Stall Width?
-            <input type='number' name='stall-size'>
-          </li>
+          </label>
+          <label>Stall Width:
+            <input type="number" name="stallSize">
+          </label>
+          <label>Baby changing station:
+            <select name="changingStation">
+              <option value="none">Choose</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+          </label>
+          <label>Toilet Paper:
+            <select name="toiletPaper">
+              <option value="none">Choose</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+          </label>
+          <label>Gender Neutral:
+            <select name="genderN">
+              <option value="none">Choose</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+          </label>
+          <label>Dispensers:
+            <select name="dispensers">
+              <option value="none">Choose</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+          </label>
         </ul>
+      <button id="submit" type="submit">Submit!</button>
     </main>
     <footer>
     </footer>
-    <script src="app.js"></script>
+    <script src="scripts/form.js"></script>
   </body>
 </html>
