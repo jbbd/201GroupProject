@@ -11,7 +11,6 @@ function User(username, review, location, rating){
   this.getUserRating();
 }
 
-
 function onSubmit(event) {
   event.preventDefault();
   console.log('form filled');
@@ -21,11 +20,7 @@ function onSubmit(event) {
   var userLocation = event.target.userLocation.value;
   var userRating = event.target.userRating.value;
   var newUser = new User (userName, userComment, userLocation, userRating);
-  userArray.push(newUser);
 
   localStorage.setItem('userArray', JSON.stringify(userArray));
-  userArray.push(JSON.parse(localStorage.getItem('userArray')));
-
-  console.log ('user array: ', userArray);
 }
 getForm.addEventListener('submit', onSubmit);
