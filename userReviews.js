@@ -3,10 +3,10 @@
 var restroomList = []; //stores all restroom instances
 //var userRestrooms = []; //list of restrooms based on user specs
 var restroomReview = [];
-var restroomData = [];
+var restroomData = [];//local storage from data form
 var loremIpsum = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ';
 //var userArray = [];
-var userData = [];
+var userData = [];//local storage from user form
 function Restroom(name, address, clean, singleS, multiS, size, accessibility,
   genderN, changingStation, dispensers, toiletPaper){
   this.name = name;
@@ -109,6 +109,11 @@ function getRestroomData () {
   console.log('stored values: ', storedRestrooms);
   restroomData.push(storedRestrooms);
 }
+function newRestroom () {
+  for (var i = 0; i < restroomData[0].length; i++) {
+    new Restroom(restroomData[0][i][0], restroomData[0][i][1], restroomData[0][i][2], restroomData[0][i][3], restroomData[0][i][4], restroomData[0][i][5], restroomData[0][i][6], restroomData[0][i][7], restroomData[0][i][8], restroomData[0][i][9], restroomData[0][i][10], restroomData[0][i][11], restroomData[0][i][12]);
+  }
+}
 getUserData();
 getRestroomData();
 //Hard coded - CHANGE WHEN NECESSARY
@@ -122,7 +127,10 @@ new Restroom('Eorzea', '123 West gah gah', true, true, false, 'big', true,
   true, false, true, true);
 new Restroom('Midgard', '123 North cha cha', true, true, false, 'big', true,
   true, false, true, true);
-new Restroom(restroomData[0][0],restroomData[0][1], restroomData[0][2], restroomData[0][3], restroomData[0][4], restroomData[0][5], restroomData[0][6], restroomData[0][7], restroomData[0][8], restroomData[0][9], restroomData[0][10] );
+
+newRestroom();
+
+new Restroom(restroomData[0][1][0], restroomData[0][1][1], restroomData[0][0][2], restroomData[0][0][3], restroomData[0][0][4], restroomData[0][0][5], restroomData[0][0][6], restroomData[0][0][7], restroomData[0][0][8], restroomData[0][0][9], restroomData[0][0][10], restroomData[0][0][11], restroomData[0][0][12]);
 
 // //Hard coded users
 new User (userData[0][0], userData[0][1], userData[0][2], userData[0][3]);

@@ -62,7 +62,8 @@ function onSubmit(event) {
   };
   var restroomData = [form.newName, form.newAddress, form.newClean, form.newCust, form.newNeedleDis, form.newSingleS, form.newMultiS, form.newSize, form.newAccessibility, form.newGenderN, form.newChangingStation, form.newDispensers, form.newToiletPaper];
   restroomDataArray.push(restroomData);
-  console.log('fuuuuckyou', restroomDataArray);
+  console.log('restroomData', restroomData);
+  console.log('restroomDataArray', restroomDataArray);
   localStorage.setItem('restrooms', JSON.stringify(restroomDataArray));
 
 
