@@ -1,6 +1,7 @@
 html{
   background-color: #21428F;
 }
+
 h1 {
   display: inline;
 }
@@ -8,6 +9,7 @@ header {
   max-height: 500px;
   background-color: red;
   height: 100px;
+
 }
 #search-form {
   text-align: right;
