@@ -1,8 +1,8 @@
 'use strict';
-//Feel free to modify
-var restroomList = []; //stores all restroom instances
-var userRestrooms = []; //list of restrooms based on user specs
-var restroomDataArray = [];
+// //Feel free to modify
+// var restroomList = []; //stores all restroom instances
+// var userRestrooms = []; //list of restrooms based on user specs
+// var restroomDataArray = [];
 
 function Restroom(name, address, clean, customersOnly, needles, singleS, multiS, size, accessibility,
   genderN, changingStation, dispensers, toiletPaper){
@@ -21,23 +21,6 @@ function Restroom(name, address, clean, customersOnly, needles, singleS, multiS,
   restroomList.push(this);
   userRestrooms.push(this);
 }
-
-// function User(username, totalReviews, review){
-//   this.username = username;
-//   this.numOfReviews = totalReviews;
-//   this.review = review;
-// }
-//Hard coded - CHANGE WHEN NECESSARY
-new Restroom('Pike Place', '123 East Blah BLah', true, true, false, 'big', true,
-  true, false, true, true);
-new Restroom('Valhalla', '123 West gah gah', true, true, false, 'big', true,
-  true, false, true, true);
-new Restroom('Verona', '123 North cha cha', true, true, false, 'big', true,
-  true, false, true, true);
-new Restroom('Eorzea', '123 West gah gah', true, true, false, 'big', true,
-  true, false, true, true);
-new Restroom('Midgard', '123 North cha cha', true, true, false, 'big', true,
-  true, false, true, true);
 
 var formEl = document.getElementById('hello');
 function onSubmit(event) {
