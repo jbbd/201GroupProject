@@ -2,15 +2,14 @@ html{
   background-color: #21428F;
 }
 
-}
-#search-form {
+h1{
+  font-size: 100px;
+  margin: 0 auto;
   text-align: center;
-  padding-right: 70px;
+  color: white;
+  font-family: cursive;
 }
-#searchbar {
-  width: 275px;
-  margin-left: 350%;
-}
+
 button {
   position: relative;
   top: 40px;
@@ -49,14 +48,6 @@ img {
   margin-top: 3%;
   margin-left: 19%;
   display: inline-block;
-}
-
-h1{
-  font-size: 100px;
-  margin: 0 auto;
-  text-align: center;
-  color: white;
-  font-family: cursive;
 }
 
 sidebar {

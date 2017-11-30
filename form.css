@@ -1,12 +1,10 @@
 html{
   background-color: #21428F;
 }
+.lables {
+  font-size: 30px;
+}
 
-}
-#search-form {
-  text-align: center;
-  padding-right: 70px;
-}
 #searchbar {
   width: 275px;
   margin-left: 350%;
