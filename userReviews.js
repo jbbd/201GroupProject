@@ -28,6 +28,7 @@ function User(username, review, location, rating){
   this.location = location;
   this.rating = rating;
   restroomReview.push(this);
+  console.log('what user reviews we have: ', restroomReview);
   //this.getUserRating();
 }
 // function User(username, review, restroomName){
@@ -98,11 +99,11 @@ Restroom.prototype.printRestroomItem = function (key) {
 function getData () {
   var storedReview = JSON.parse(localStorage.getItem('userdata'));//getlocal data
   console.log('stored values: ', storedReview);
-userData.push(storedReview);
+  userData.push(storedReview);
 //if(storedReview !== null) {//if there's info in local storage..
   //userArray = storedReview;//set current storage of newProductArray to the locally stored array
 }
-
+getData();
 
 //Hard coded - CHANGE WHEN NECESSARY
 new Restroom('Pike Place', '123 East Blah BLah', true, true, false, 'big', true,
@@ -117,7 +118,7 @@ new Restroom('Midgard', '123 North cha cha', true, true, false, 'big', true,
   true, false, true, true);
 
 // //Hard coded users
-new User (userData[0], userData[1], userData[2], userData[3]);
+new User (userData[0][0], userData[0][1], userData[0][2], userData[0][3]);
 // new User('tinkleBell', loremIpsum, restroomList[2].name);
 // new User('WestCoastBestCoast', loremIpsum, restroomList[2].name);
 // new User('RowdyRuffGurl', loremIpsum, restroomList[1].name);
