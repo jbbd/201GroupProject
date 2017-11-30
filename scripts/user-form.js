@@ -23,4 +23,6 @@ function onSubmit(event) {
 
   localStorage.setItem('userdata', JSON.stringify(newUser));
 }
+
+
 getForm.addEventListener('submit', onSubmit);
