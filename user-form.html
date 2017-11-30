@@ -8,6 +8,7 @@
 </head>
 <body>
   <header>
+    <h1>Go on the Go</h1>
   </header>
   <main>
     <fieldset id="main-fieldset">
@@ -19,10 +20,7 @@
         <br>
         <!-- <input type="text" name="userLocation"> -->
         <select name="userLocation" id="locationDropDown">
-          <!-- <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="fiat">Fiat</option>
-          <option value="audi">Audi</option> -->
+
         </select>
         <br>
         <label>Rating:</label>
@@ -31,10 +29,10 @@
         <br>
         <label>Review:</label>
         <br>
-        <input class="reviewBox" type="text" name="userComment">
-        <!-- <input type="text" name="userComment"> -->
+        <textarea class="reviewBox" type="text" name="userComment">
+        </textarea>
         <br>
-        <button class="submit" type="submit">Submit</button>
+        <button class="submit" type="submit" id="submitButton">Submit</button>
       </form>
     </fieldset>
   </form>
@@ -43,7 +41,5 @@
 </footer>
 <script src="scripts/user-form.js"></script>
 <script src="scripts/app.js"></script>
-
-
 </body>
 </html>

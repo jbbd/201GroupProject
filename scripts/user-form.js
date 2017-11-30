@@ -2,14 +2,14 @@
 
 //var newUser = [];
 var getForm = document.getElementById('main-form');
-// function User(username, review, location, rating){
-//   this.username = username;
-//   this.review = review;
-//   this.location = location;
-//   this.rating = rating;
-//   userArray.push(this);
-//   this.getUserRating();
-// }
+function User(username, review, location, rating){
+  this.username = username;
+  this.review = review;
+  this.location = location;
+  this.rating = rating;
+  userArray.push(this);
+  this.getUserRating();
+}
 
 function onSubmit(event) {
   event.preventDefault();
