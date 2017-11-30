@@ -1,7 +1,7 @@
 'use strict';
-
 var userArray = [];
 var getForm = document.getElementById('main-form');
+
 function User(username, review, location, rating){
   this.username = username;
   this.review = review;
@@ -9,6 +9,11 @@ function User(username, review, location, rating){
   this.rating = rating;
   userArray.push(this);
   this.getUserRating();
+}
+function setData () {
+  localStorage.clear;
+  var data = JSON.stringify(userArray);//taking info from current storage
+  localStorage.setItem('stored data', data);//putting into local storage
 }
 
 function onSubmit(event) {
@@ -19,8 +24,10 @@ function onSubmit(event) {
   var userComment = event.target.userComment.value;
   var userLocation = event.target.userLocation.value;
   var userRating = event.target.userRating.value;
-  var newUser = new User (userName, userComment, userLocation, userRating);
+  new User (userName, userComment, userLocation, userRating);
+  setData();
 
-  localStorage.setItem('userArray', JSON.stringify(userArray));
 }
+
+
 getForm.addEventListener('submit', onSubmit);
