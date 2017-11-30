@@ -85,7 +85,6 @@ function test(){//testing
   var list = createList(restroomList);
   createDiv(list);
 }
-
 var getDropDown = document.getElementById('locationDropDown');
 function dropDown(){
   for (var i = 0; i < restroomList.length; i++){

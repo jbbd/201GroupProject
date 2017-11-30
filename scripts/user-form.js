@@ -10,21 +10,6 @@ function User(username, review, location, rating){
   userArray.push(this);
   this.getUserRating();
 }
-
-// function onSubmit(event) {
-//   event.preventDefault();
-//   console.log('form filled');
-//
-//   var userName = event.target.userName.value;
-//   var userComment = event.target.userComment.value;
-//   var userLocation = event.target.userLocation.value;
-//   var userRating = event.target.userRating.value;
-//   var newUser = [userName, userComment, userLocation, userRating];
-//   newUserArray.push(newUserArray);
-//
-//   localStorage.setItem('userdata', JSON.stringify(newUserArray));
-// }
-
 function onSubmit(event) {
   event.preventDefault();
   var userForm = {
