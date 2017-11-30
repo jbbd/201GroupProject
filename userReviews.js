@@ -4,7 +4,8 @@ var restroomList = []; //stores all restroom instances
 //var userRestrooms = []; //list of restrooms based on user specs
 var restroomReview = [];
 var loremIpsum = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ';
-var userArray = [];
+//var userArray = [];
+var userData = [];
 function Restroom(name, address, clean, singleS, multiS, size, accessibility,
   genderN, changingStation, dispensers, toiletPaper){
   this.name = name;
@@ -95,12 +96,13 @@ Restroom.prototype.printRestroomItem = function (key) {
 //   localStorage.setItem('stored data', data);//putting into local storage
 // }
 function getData () {
-  var storedReview = JSON.parse(localStorage.getItem('stored data'));//getlocal data
-  console.log('local array: ', storedReview);
-  if(storedReview !== null) {//if there's info in local storage..
-    userArray = storedReview;//set current storage of newProductArray to the locally stored array
-  }
+  var storedReview = JSON.parse(localStorage.getItem('userdata'));//getlocal data
+  console.log('stored values: ', storedReview);
+userData.push(storedReview);
+//if(storedReview !== null) {//if there's info in local storage..
+  //userArray = storedReview;//set current storage of newProductArray to the locally stored array
 }
+
 
 //Hard coded - CHANGE WHEN NECESSARY
 new Restroom('Pike Place', '123 East Blah BLah', true, true, false, 'big', true,
@@ -115,6 +117,7 @@ new Restroom('Midgard', '123 North cha cha', true, true, false, 'big', true,
   true, false, true, true);
 
 // //Hard coded users
+new User (userData[0], userData[1], userData[2], userData[3]);
 // new User('tinkleBell', loremIpsum, restroomList[2].name);
 // new User('WestCoastBestCoast', loremIpsum, restroomList[2].name);
 // new User('RowdyRuffGurl', loremIpsum, restroomList[1].name);
