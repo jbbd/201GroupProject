@@ -44,7 +44,7 @@ function onSubmit(event) {
     newGenderN: event.target.genderN.value,
     newDispensers: event.target.dispensers.value,
   };
-  var restroomData = [form.newName, form.newAddress, form.newClean, form.newCust, form.newNeedleDis, form.newSingleS, form.newMultiS, form.newSize, form.newAccessibility, form.newGenderN, form.newChangingStation, form.newDispensers, form.newToiletPaper];
+  var restroomData = [newName, newAddress, newClean, newCust, newNeedleDis, newSingleS, newMultiS, newSize, newAccessibility, newGenderN, newChangingStation, newDispensers, newToiletPaper];
   restroomDataArray.push(restroomData);
   console.log('fuuuuckyou', restroomDataArray);
   localStorage.setItem('restrooms', JSON.stringify(restroomDataArray));
