@@ -20,10 +20,15 @@ function Restroom(name, address, clean, singleS, multiS, size, accessibility,
   this.toiletPaper = toiletPaper;//bool
   restroomList.push(this);
 }
+function parseAndGet() {
+  if (JSON.parse(localStorage.getItem('newUser') !== null)){
+    var output = localStorage.getItem('newUser');
+    restroomReview.push(JSON.parse(output));
+  }
+}
 
 function User(username, review, restroomName){
   this.username = username;
-  //this.numOfReviews = totalReviews;MAKE STRETCH GOAL
   this.review = review;
   this.restroomName = restroomName;
   restroomReview.push(this);
@@ -91,7 +96,6 @@ function createDiv(list){
     newDiv.appendChild(list[i]);
     blah.appendChild(newDiv);
   }
-
 }
 function createList(array){//THIS TAKES THE LIST ARRAY
   var key;

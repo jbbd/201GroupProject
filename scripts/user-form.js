@@ -1,15 +1,8 @@
 'use strict';
 
-//var newUser = [];
+
 var getForm = document.getElementById('main-form');
-// function User(username, review, location, rating){
-//   this.username = username;
-//   this.review = review;
-//   this.location = location;
-//   this.rating = rating;
-//   userArray.push(this);
-//   this.getUserRating();
-// }
+
 
 function onSubmit(event) {
   event.preventDefault();
@@ -19,10 +12,17 @@ function onSubmit(event) {
   var userComment = event.target.userComment.value;
   var userLocation = event.target.userLocation.value;
   var userRating = event.target.userRating.value;
-  var newUser = [userName, userComment, userLocation, userRating];
-
-  localStorage.setItem('userdata', JSON.stringify(newUser));
+  var newUser = [userName, userComment, userLocation, userRating]; //OLD
+  var newUser = new User(userName, userComment, userLocation, userRating);
+  //DOOT: WILL NOT WORK WHILE APP.JS: Lines 76/77 are on
+  //May be html crap
+  localStorage.setItem('newUser', JSON.stringify(newUser));
 }
-
-
 getForm.addEventListener('submit', onSubmit);
+
+function parseAndGet() {
+  if (JSON.parse(localStorage.getItem('productList') !== null)){
+    var output = localStorage.getItem('productList');
+    restroomReview.push(JSON.parse(output));
+  }
+}parseAndGet();

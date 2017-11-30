@@ -27,14 +27,6 @@ Restroom.prototype.setTotalRatings = function(){
   }
   this.totalRating = total / this.userRatings.length;
 };
-// function User(username, review, location, rating){
-//   this.username = username;
-//   this.review = review;
-//   this.location = location;
-//   this.rating = rating;
-//   userArray.push(this);
-//   this.getUserRating();
-// }
 User.prototype.getUserRating = function(){
   for (var i = 0; i < restroomList.length; i++){
     if (restroomList[i].name === this.location){
@@ -44,8 +36,6 @@ User.prototype.getUserRating = function(){
     }
   }
 };
-
-
 
 User.prototype.createList = function(array){//THIS TAKES THE LIST ARRAY
   var key;
@@ -73,14 +63,20 @@ new Restroom('Eorzea', '123 West gah gah', true, true, false, 'big', true,
 new Restroom('Midgard', '123 North cha cha', true, true, false, 'big', true,
   true, false, true, true);
 
-
 function createDiv(list){//THIS TAKES A VARIABLE THAT STORES THE RESULT OF CREATELIST()
   var newDiv = document.createElement('div');
   newDiv.appendChild(list);
   var blah = document.getElementById('hello');
   blah.appendChild(newDiv);
 }
-
+function User(username, review, restroomName){
+  this.username = username;
+  this.review = review;
+  this.restroomName = restroomName;
+  // restroomReview.push(this);
+  // console.log('what users do we have', restroomReview);
+  this.push
+}
 function test(){//testing
   var list = createList(restroomList);
   createDiv(list);

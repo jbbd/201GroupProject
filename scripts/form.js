@@ -22,12 +22,6 @@ function Restroom(name, address, clean, customersOnly, needles, singleS, multiS,
   userRestrooms.push(this);
 }
 
-// function User(username, totalReviews, review){
-//   this.username = username;
-//   this.numOfReviews = totalReviews;
-//   this.review = review;
-// }
-//Hard coded - CHANGE WHEN NECESSARY
 new Restroom('Pike Place', '123 East Blah BLah', true, true, false, 'big', true,
   true, false, true, true);
 new Restroom('Valhalla', '123 West gah gah', true, true, false, 'big', true,
@@ -65,8 +59,6 @@ function onSubmit(event) {
   console.log('fuuuuckyou', restroomDataArray);
   localStorage.setItem('restrooms', JSON.stringify(restroomDataArray));
 
-
-  //get click event
 }
 formEl.addEventListener('submit', onSubmit);
 console.log();// getInput(){
