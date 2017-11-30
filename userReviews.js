@@ -110,8 +110,19 @@ function getRestroomData () {
   restroomData.push(storedRestrooms);
 }
 function newRestroom () {
-  for (var i = 0; i < restroomData[0].length; i++) {
-    new Restroom(restroomData[0][i][0], restroomData[0][i][1], restroomData[0][i][2], restroomData[0][i][3], restroomData[0][i][4], restroomData[0][i][5], restroomData[0][i][6], restroomData[0][i][7], restroomData[0][i][8], restroomData[0][i][9], restroomData[0][i][10], restroomData[0][i][11], restroomData[0][i][12]);
+  if (restroomData !== null){
+    for (var i = 0; i < restroomData[0].length; i++) {
+      new Restroom(restroomData[0][i][0], restroomData[0][i][1], restroomData[0][i][2], restroomData[0][i][3], restroomData[0][i][4], restroomData[0][i][5], restroomData[0][i][6], restroomData[0][i][7], restroomData[0][i][8], restroomData[0][i][9], restroomData[0][i][10], restroomData[0][i][11], restroomData[0][i][12]);
+    }
+  }
+  else {
+    console.log('NO DATA IN CLOUD');
+  }
+}
+function printRestrooms () {
+  for (var i = 0; i < restroomList.length; i++) {
+    restroomList[i].printRestroomHeader();
+    console.log('restroomList at i', restroomList[i]);
   }
 }
 //______________________________________________________________________
@@ -130,6 +141,7 @@ new Restroom('Midgard', '123 North cha cha', true, true, false, 'big', true,
   true, false, true, true);
 
 newRestroom();
+printRestrooms();
 
 
 
