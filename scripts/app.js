@@ -85,3 +85,13 @@ function test(){//testing
   var list = createList(restroomList);
   createDiv(list);
 }
+
+var getDropDown = document.getElementById('locationDropDown');
+function dropDown(){
+  for (var i = 0; i < restroomList.length; i++){
+    var createOptionEl = document.createElement('OPTION');
+    createOptionEl.textContent = restroomList[i].name;
+    getDropDown.appendChild(createOptionEl);
+  }
+}
+dropDown();
