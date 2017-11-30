@@ -114,6 +114,7 @@ function newRestroom () {
     new Restroom(restroomData[0][i][0], restroomData[0][i][1], restroomData[0][i][2], restroomData[0][i][3], restroomData[0][i][4], restroomData[0][i][5], restroomData[0][i][6], restroomData[0][i][7], restroomData[0][i][8], restroomData[0][i][9], restroomData[0][i][10], restroomData[0][i][11], restroomData[0][i][12]);
   }
 }
+//______________________________________________________________________
 getUserData();
 getRestroomData();
 //Hard coded - CHANGE WHEN NECESSARY
@@ -130,11 +131,13 @@ new Restroom('Midgard', '123 North cha cha', true, true, false, 'big', true,
 
 newRestroom();
 
-new Restroom(restroomData[0][1][0], restroomData[0][1][1], restroomData[0][0][2], restroomData[0][0][3], restroomData[0][0][4], restroomData[0][0][5], restroomData[0][0][6], restroomData[0][0][7], restroomData[0][0][8], restroomData[0][0][9], restroomData[0][0][10], restroomData[0][0][11], restroomData[0][0][12]);
 
-// //Hard coded users
-new User (userData[0][0], userData[0][1], userData[0][2], userData[0][3]);
-// new User('tinkleBell', loremIpsum, restroomList[2].name);
-// new User('WestCoastBestCoast', loremIpsum, restroomList[2].name);
-// new User('RowdyRuffGurl', loremIpsum, restroomList[1].name);
-// new User('Lincoln-Logger', loremIpsum, restroomList[3].name );
+
+// new Restroom(restroomData[0][1][0], restroomData[0][1][1], restroomData[0][0][2], restroomData[0][0][3], restroomData[0][0][4], restroomData[0][0][5], restroomData[0][0][6], restroomData[0][0][7], restroomData[0][0][8], restroomData[0][0][9], restroomData[0][0][10], restroomData[0][0][11], restroomData[0][0][12]);
+//
+// // //Hard coded users
+// new User (userData[0][0], userData[0][1], userData[0][2], userData[0][3]);
+// // new User('tinkleBell', loremIpsum, restroomList[2].name);
+// // new User('WestCoastBestCoast', loremIpsum, restroomList[2].name);
+// // new User('RowdyRuffGurl', loremIpsum, restroomList[1].name);
+// // new User('Lincoln-Logger', loremIpsum, restroomList[3].name );
