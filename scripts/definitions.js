@@ -112,19 +112,19 @@ User.prototype.getUserRating = function(){
     }
   }
 };
-User.prototype.createList = function(array){//THIS TAKES THE LIST ARRAY
-  var key;
-  for (var i = 0; i < restroomList.length; i++){//for each item in the array...
-    var listEl = document.createElement('ul');//create unordered list
-    for (key in restroomList[i]){//For each key in the list...
-      console.log(restroomList[i]);
-      var listItemEl = document.createElement('li');//create a list item
-      listItemEl.textContent = restroomList[i].name;//Give that list item a key
-      listEl.appendChild(listItemEl);
-    }
-  }
-  return listEl;
-};
+// User.prototype.createList = function(array){//THIS TAKES THE LIST ARRAY
+//   var key;
+//   for (var i = 0; i < restroomList.length; i++){//for each item in the array...
+//     var listEl = document.createElement('ul');//create unordered list
+//     for (key in restroomList[i]){//For each key in the list...
+//       console.log(restroomList[i]);
+//       var listItemEl = document.createElement('li');//create a list item
+//       listItemEl.textContent = restroomList[i].name;//Give that list item a key
+//       listEl.appendChild(listItemEl);
+//     }
+//   }
+//   return listEl;
+// };
 User.prototype.getUserRating = function(){
   for (var i = 0; i < restroomList.length; i++){
     if (restroomList[i].name === this.location){
@@ -185,4 +185,20 @@ Restroom.prototype.setTotalRatings = function(){
 
 
 //////////////////////////////////////////FUNCTION CALLLS:
-dropDown();
+//Hard coded - CHANGE WHEN NECESSARY
+new Restroom('Pike Place', '123 East Blah BLah', true, true, false, 'big', true,
+  true, false, true, true);
+new Restroom('Valhalla', '123 West gah gah', true, true, false, 'big', true,
+  true, false, true, true);
+new Restroom('Verona', '123 North cha cha', true, true, false, 'big', true,
+  true, false, true, true);
+new Restroom('Eorzea', '123 West gah gah', true, true, false, 'big', true,
+  true, false, true, true);
+new Restroom('Midgard', '123 North cha cha', true, true, false, 'big', true,
+  true, false, true, true);
+
+//Hard coded users
+new User('tinkleBell', loremIpsum, restroomList[2].name);
+new User('WestCoastBestCoast', loremIpsum, restroomList[2].name);
+new User('RowdyRuffGurl', loremIpsum, restroomList[1].name);
+new User('Lincoln-Logger', loremIpsum, restroomList[3].name );

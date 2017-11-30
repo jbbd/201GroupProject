@@ -4,24 +4,25 @@
 // var userRestrooms = []; //list of restrooms based on user specs
 // var restroomDataArray = [];
 
-function Restroom(name, address, clean, customersOnly, needles, singleS, multiS, size, accessibility,
-  genderN, changingStation, dispensers, toiletPaper){
-  this.name = name;
-  this.address = address;
-  this.clean = clean;
-  this.customersOnly = customersOnly;
-  this.needles = needles;
-  this.stallsChoice = singleS; //bool
-  this.size = size;
-  this.hAccess = accessibility; //bool
-  this.genderNeutral = genderN; //array?
-  this.changingStation = changingStation; //bool
-  this.dispensers = dispensers; //bool
-  this.toiletPaper = toiletPaper;//bool
-  restroomList.push(this);
-  userRestrooms.push(this);
-}
+// function Restroom(name, address, clean, customersOnly, needles, singleS, multiS, size, accessibility,
+//   genderN, changingStation, dispensers, toiletPaper){
+//   this.name = name;
+//   this.address = address;
+//   this.clean = clean;
+//   this.customersOnly = customersOnly;
+//   this.needles = needles;
+//   this.stallsChoice = singleS; //bool
+//   this.size = size;
+//   this.hAccess = accessibility; //bool
+//   this.genderNeutral = genderN; //array?
+//   this.changingStation = changingStation; //bool
+//   this.dispensers = dispensers; //bool
+//   this.toiletPaper = toiletPaper;//bool
+//   restroomList.push(this);
+//   userRestrooms.push(this);
+// }
 
+//____________________________________________________________________
 var formEl = document.getElementById('hello');
 function onSubmit(event) {
   console.log(event.target.elements[0].value, 'event');

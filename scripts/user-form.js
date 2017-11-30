@@ -1,4 +1,5 @@
 'use strict';
+dropDown();
 
 //var newUser = [];
 var getForm = document.getElementById('main-form');
