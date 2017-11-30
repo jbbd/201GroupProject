@@ -3,7 +3,7 @@ html{
 }
 
 h1 {
-  display: inline;
+  text-align: center;
 }
 header {
   max-height: 500px;
@@ -139,8 +139,9 @@ nav {
 button {
   position: relative;
   top: 5%;
-  margin-left: 15%;
-  display: inline-block;
+  /*margin-left: 900px;*/
+  display: block;
+  padding-top: 30px;
 }
 .about {
   font-family: fantasy;
@@ -257,28 +258,28 @@ p{
   padding-left: 250px;
 }
 input {
-  max-width: 300px;
-  position: relative;
+  /*max-width: 300px;*/
+  /*position: relative;
   display: block;
   margin-top: -15px;
   margin-left: 960px;
-  padding-bottom: 0;
+  padding-bottom: 0;*/
 }
 select {
-  display: block;
-  position: relative;
-  left:200px;
+  /*display: block;
+  position: relative;*/
+  /*left:200px;
   top: -17px;
-  margin-left: 760px;
   padding-bottom: 0;
-  width: 130px;
+  width: 130px;*/
 }
 label {
   font-size: 20px;
   width: 200px;
-  display: block;
-  margin-left: 350px;
+
+  /*margin-left: 350px;*/
   padding-bottom: 0;
+  text-align: right;
 }
 #submit {
   margin-left: 47%;

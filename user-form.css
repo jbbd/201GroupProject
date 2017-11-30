@@ -1,12 +1,6 @@
 html{
   background-color: #21428F;
 }
-.reviewBox{
-  min-width:255px;
-  min-height: 200px;
- box-sizing:border-box;
- }
-
 
  .about{
    font-family: fantasy;
@@ -64,3 +58,10 @@ html{
  p{
    max-width: 500px;
  }
+ .reviewBox{
+   min-width:255px;
+   min-height: 200px;
+   /*box-sizing:border-box;*/
+   /*margin-left: 900px;*/
+   display: block;
+  }
