@@ -2,6 +2,7 @@
 //Feel free to modify
 var restroomList = []; //stores all restroom instances
 var userRestrooms = []; //list of restrooms based on user specs
+var restroomDataArray = [];
 
 function Restroom(name, address, clean, customersOnly, needles, singleS, multiS, size, accessibility,
   genderN, changingStation, dispensers, toiletPaper){
@@ -21,11 +22,11 @@ function Restroom(name, address, clean, customersOnly, needles, singleS, multiS,
   userRestrooms.push(this);
 }
 
-function User(username, totalReviews, review){
-  this.username = username;
-  this.numOfReviews = totalReviews;
-  this.review = review;
-}
+// function User(username, totalReviews, review){
+//   this.username = username;
+//   this.numOfReviews = totalReviews;
+//   this.review = review;
+// }
 //Hard coded - CHANGE WHEN NECESSARY
 new Restroom('Pike Place', '123 East Blah BLah', true, true, false, 'big', true,
   true, false, true, true);
@@ -59,10 +60,10 @@ function onSubmit(event) {
     newGenderN: event.target.genderN.value,
     newDispensers: event.target.dispensers.value,
   };
-
-  new Restroom(form.newName, form.newAddress, form.newClean, form.newCust, form.newNeedleDis, form.newSingleS, form.newMultiS, form.newSize, form.newAccessibility, form.newGenderN, form.newChangingStation, form.newDispensers, form.newToiletPaper);
-  console.log('fuuuuckyou', userRestrooms);
-  localStorage.setItem('userRestrooms', JSON.stringify(userRestrooms));
+  var restroomData = [form.newName, form.newAddress, form.newClean, form.newCust, form.newNeedleDis, form.newSingleS, form.newMultiS, form.newSize, form.newAccessibility, form.newGenderN, form.newChangingStation, form.newDispensers, form.newToiletPaper];
+  restroomDataArray.push(restroomData);
+  console.log('fuuuuckyou', restroomDataArray);
+  localStorage.setItem('restrooms', JSON.stringify(restroomDataArray));
 
 
   //get click event
