@@ -1,5 +1,6 @@
 'use strict';
 //Feel free to modify
+var keyArray = ['Name: ', 'Address: ', 'Is it Clean? ', 'Single Stall? ', 'Multi Stall? ', 'Stall Width: ', 'Handicap Accessible? ', 'Gender Neutral Option? ', 'Changing Station? ', 'Product Dispensers? ', 'Toilet Paper? '];
 var restroomList = []; //stores all restroom instances
 //var userRestrooms = []; //list of restrooms based on user specs
 var restroomReview = [];
@@ -123,6 +124,11 @@ function printRestrooms () {
   for (var i = 0; i < restroomList.length; i++) {
     restroomList[i].printRestroomHeader();
     console.log('restroomList at i', restroomList[i]);
+    for (var j = 0; j < keyArray.length; j++) {
+      restroomList[i].printRestroomStats(keyArray[j], restroomList[i][j]);
+      console.log('j is: ', j);
+      console.log('keyArray at j', keyArray[j]);
+    }
   }
 }
 //______________________________________________________________________
