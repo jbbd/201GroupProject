@@ -1,12 +1,12 @@
 'use strict';
 //Feel free to modify
-var keyArray = ['Name: ', 'Address: ', 'Is it Clean? ', 'Single Stall? ', 'Multi Stall? ', 'Stall Width: ', 'Handicap Accessible? ', 'Gender Neutral Option? ', 'Changing Station? ', 'Product Dispensers? ', 'Toilet Paper? '];
+var keyArray = ['Name: ', 'Address: ', 'Over-All Rating ', 'Single Stall? ', 'Multi Stall? ', 'Stall Width: ', 'Handicap Accessible? ', 'Gender Neutral Option? ', 'Changing Station? ', 'Product Dispensers? ', 'Toilet Paper? '];
 var restroomList = []; //stores all restroom instances
 //var userRestrooms = []; //list of restrooms based on user specs
 var restroomReview = [];
 var restroomData = [];//local storage from data form
 var loremIpsum = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ';
-//var userArray = [];
+var newUserArray = [];
 var userData = [];//local storage from user form
 function Restroom(name, address, clean, singleS, multiS, size, accessibility,
   genderN, changingStation, dispensers, toiletPaper){
@@ -99,7 +99,7 @@ Restroom.prototype.printRestroomItem = function (key) {
 //   localStorage.setItem('stored data', data);//putting into local storage
 // }
 function getUserData () {
-  var storedReview = JSON.parse(localStorage.getItem('userdata'));//getlocal data
+  var storedReview = JSON.parse(localStorage.getItem('users'));//getlocal data
   console.log('stored values: ', storedReview);
   userData.push(storedReview);
 //if(storedReview !== null) {//if there's info in local storage..
@@ -114,6 +114,16 @@ function newRestroom () {
   if (restroomData !== null){
     for (var i = 0; i < restroomData[0].length; i++) {
       new Restroom(restroomData[0][i][0], restroomData[0][i][1], restroomData[0][i][2], restroomData[0][i][3], restroomData[0][i][4], restroomData[0][i][5], restroomData[0][i][6], restroomData[0][i][7], restroomData[0][i][8], restroomData[0][i][9], restroomData[0][i][10], restroomData[0][i][11], restroomData[0][i][12]);
+    }
+  }
+  else {
+    console.log('NO DATA IN CLOUD');
+  }
+}
+function newUser () {
+  if (userData !== null){
+    for (var i = 0; i < userData[0].length; i++) {
+      new User(userData[0][i][0], userData[0][i][1], userData[0][i][2], userData[0][i][3]);
     }
   }
   else {
@@ -156,10 +166,8 @@ new Restroom('Eorzea', '123 West gah gah', true, true, false, 'big', true,
   true, false, true, true);
 new Restroom('Midgard', '123 North cha cha', true, true, false, 'big', true,
   true, false, true, true);
-
-
 printRestrooms();
-//new User (userData[0][0], userData[0][1], userData[0][2], userData[0][3]);
+newUser();
 new User('tinkleBell', loremIpsum, restroomList[2].name);
 new User('WestCoastBestCoast', loremIpsum, restroomList[2].name);
 new User('RowdyRuffGurl', loremIpsum, restroomList[1].name);
