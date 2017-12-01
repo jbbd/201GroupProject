@@ -25,3 +25,12 @@ function onSubmit(event) {
   localStorage.setItem('users', JSON.stringify(newUserArray));
 }
 getForm.addEventListener('submit', onSubmit);
+var getDropDown = document.getElementById('locationDropDown');
+function dropDown(){
+  for (var i = 0; i < restroomList.length; i++){
+    var createOptionEl = document.createElement('OPTION');
+    createOptionEl.textContent = restroomList[i].name;
+    getDropDown.appendChild(createOptionEl);
+  }
+}
+dropDown();

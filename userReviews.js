@@ -154,13 +154,6 @@ new Restroom('Midgard', '123 North cha cha', true, true, false, 'big', true,
 
 
 printRestrooms();
-
-
-
-
-// new Restroom(restroomData[0][1][0], restroomData[0][1][1], restroomData[0][0][2], restroomData[0][0][3], restroomData[0][0][4], restroomData[0][0][5], restroomData[0][0][6], restroomData[0][0][7], restroomData[0][0][8], restroomData[0][0][9], restroomData[0][0][10], restroomData[0][0][11], restroomData[0][0][12]);
-//
-// // //Hard coded users
 new User (userData[0][0], userData[0][1], userData[0][2], userData[0][3]);
 new User('tinkleBell', loremIpsum, restroomList[2].name);
 new User('WestCoastBestCoast', loremIpsum, restroomList[2].name);
