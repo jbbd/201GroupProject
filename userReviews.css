@@ -7,7 +7,7 @@ body {
 header.main {
   display: inline-block;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.41);
+  background-color: rgb(173, 216, 230);
   height: auto;
   position: relative;
   top:0;
