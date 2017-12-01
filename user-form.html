@@ -10,8 +10,9 @@
     <ul class="navLinks">
       <li><a href="welcome.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
-      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="userReviews.html">Reviews</a></li>
     <ul>
+
   </header>
   <main>
     <fieldset id="main-fieldset">
@@ -21,9 +22,7 @@
         <input type="text" name="userName"><br>
         <label>Location:</label>
         <br>
-        <!-- <input type="text" name="userLocation"> -->
         <select name="userLocation" id="locationDropDown">
-
         </select>
         <br>
         <label>Rating:</label>
@@ -32,18 +31,17 @@
         <br>
         <label>Review:</label>
         <br>
-        <textarea class="reviewBox" type="text" name="userComment">
-        </textarea>
+        <textarea class="reviewBox" type="text" name="userComment"></textarea>
         <br>
-        <button class="submit" type="submit" id="submitButton">Submit</button>
+        <button class="submit" id="submit" type="submit" onclick="location.href = 'userReviews.html'">Submit!</button>
       </form>
     </fieldset>
   </form>
 </main>
 <footer>
 </footer>
+<script src="scripts/app.js"></script>
 <script src="userReviews.js"></script>
 <script src="scripts/user-form.js"></script>
-<script src="scripts/app.js"></script>
 </body>
 </html>
