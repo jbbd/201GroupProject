@@ -125,6 +125,7 @@ img.banner {
 .review p {
   display: inline-block;
   margin: 1%;
+  min-height: 100px;
   }
   .review div {
     background-color: #cdeaf3;
@@ -136,7 +137,8 @@ img.banner {
   }
   #restroomStats ul {
     margin-top: 0px;
-
+    margin-bottom: 3px;
+    background-color: #cdeaf3;
   }
 #restroomStats li {
   display: block;
