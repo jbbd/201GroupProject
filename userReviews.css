@@ -10,6 +10,7 @@ header.main {
   background-color: rgb(173, 216, 230);
   height: auto;
   position: relative;
+  box-shadow: 1px 5px 5px #88888880;
   top:0;
   z-index: 10;
 }
@@ -39,10 +40,12 @@ header li {
   padding-left: 5%;
 }
 article.review {
-  background-color: #ffffffb5;
+  background-color: #fffffff5;
   position: relative;
-  margin-top: 200px;
-  z-index: 5;
+  margin-top: 400px;
+  padding-top: 30px;
+  box-shadow: 5px -5px 5px #88888880;
+  z-index: 6;
 
 }
 
@@ -67,6 +70,9 @@ article header {
   width: 20%;
   margin-left: 5%;
   float: left;
+  padding: 2%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .center {
   position: relative;
@@ -75,6 +81,7 @@ article header {
   margin-left: 30%;
   margin-bottom: 70px;
   margin-right: 5%;
+
 
 }
 
@@ -95,14 +102,19 @@ img {
 img.banner {
   position: absolute;
   width: 100%;
-  top: -100px;
-  z-index:1;
+ top: 0;
+  max-height: 600px;
+  box-shadow: 1px 5px 5px #88888880;
+  z-index:4;
   overflow: hidden;
+
 }
 .review header {
   height: 100px;
   background-color: lightblue;
   padding: 1%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   overflow: hidden;
 }
 .review img {
@@ -130,6 +142,14 @@ img.banner {
   .review div {
     background-color: #cdeaf3;
     padding: 6%;
+  }
+  .drop-down div {
+    height: 400px;
+    background-color: #cdeaf3;
+    display: block;
+    position: relative;
+
+
   }
   #restroomStats h1 {
     margin-bottom: 0px;
