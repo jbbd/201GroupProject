@@ -1,7 +1,6 @@
 'use strict';
 var restroomList = []; //stores all restroom instances
 var userRestrooms = []; //list of restrooms based on user specs
-
 function Restroom(name, address, clean, singleS, multiS, size, accessibility,
   genderN, changingStation, dispensers, toiletPaper){
   this.name = name;
@@ -27,14 +26,6 @@ Restroom.prototype.setTotalRatings = function(){
   }
   this.totalRating = total / this.userRatings.length;
 };
-// function User(username, review, location, rating){
-//   this.username = username;
-//   this.review = review;
-//   this.location = location;
-//   this.rating = rating;
-//   userArray.push(this);
-//   this.getUserRating();
-// }
 User.prototype.getUserRating = function(){
   for (var i = 0; i < restroomList.length; i++){
     if (restroomList[i].name === this.location){
@@ -44,9 +35,6 @@ User.prototype.getUserRating = function(){
     }
   }
 };
-
-
-
 User.prototype.createList = function(array){//THIS TAKES THE LIST ARRAY
   var key;
   for (var i = 0; i < restroomList.length; i++){//for each item in the array...
@@ -60,7 +48,6 @@ User.prototype.createList = function(array){//THIS TAKES THE LIST ARRAY
   }
   return listEl;
 };
-
 //Hard coded - CHANGE WHEN NECESSARY
 new Restroom('Pike Place', '123 East Blah BLah', true, true, false, 'big', true,
   true, false, true, true);
@@ -72,25 +59,13 @@ new Restroom('Eorzea', '123 West gah gah', true, true, false, 'big', true,
   true, false, true, true);
 new Restroom('Midgard', '123 North cha cha', true, true, false, 'big', true,
   true, false, true, true);
-
-
 function createDiv(list){//THIS TAKES A VARIABLE THAT STORES THE RESULT OF CREATELIST()
   var newDiv = document.createElement('div');
   newDiv.appendChild(list);
   var blah = document.getElementById('hello');
   blah.appendChild(newDiv);
 }
-
 function test(){//testing
   var list = createList(restroomList);
   createDiv(list);
 }
-var getDropDown = document.getElementById('locationDropDown');
-function dropDown(){
-  for (var i = 0; i < restroomList.length; i++){
-    var createOptionEl = document.createElement('OPTION');
-    createOptionEl.textContent = restroomList[i].name;
-    getDropDown.appendChild(createOptionEl);
-  }
-}
-dropDown();
