@@ -1,55 +1,172 @@
-html{
-  background-color: #21428F;
+body {
+  font-family: sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
 }
-
-.navLinks{
-  font-size: 80px;
-  text-align: center;
+header.main {
+  display: inline-block;
+  width: 100%;
+  background-color: rgb(173, 216, 230);
+  height: auto;
+  position: relative;
+  box-shadow: 1px 5px 5px #88888880;
+  top:0;
+  z-index: 10;
 }
-
-#login{
-  margin-left: 400px;
+div.header-left{
+  display: inline;
+  width: 40%;
+  float: left;
+  margin-left: 2%;
 }
-header {
-  min-height: 50px;
-  background-color: red;
-  height: 100px;
-  margin-bottom: 20px;
+div.header-left h1 {
+  font-style: italic;
+  margin-top: 5px;
 }
-
-h1 {
-  position:
-  font-size: 50px;
-  /*margin: 0 auto;*/
-  text-align: center;
-  color: white;
-  font-family: cursive;
+div.header-right{
+  float: right;
+  width: 40%;
+  display: inline;
+  margin-top: 1%;
 }
+div.header-right ul {
+  margin-top: 5px;
 
-
-#search-form {
+}
+header li {
   text-align: right;
-  margin-left: 27%;
-  text-align: right;
-  margin-left: 31%;
+  display: inline;
+  padding-left: 5%;
 }
-#searchbar {
-  width: 275px;
-  margin-left: 110%;
-  margin-top: -15%;
-  margin-bottom: 20px;
+article.review {
+  background-color: #fffffff5;
+  position: relative;
+  margin-top: 400px;
+  padding-top: 30px;
+  box-shadow: 5px -5px 5px #88888880;
+  z-index: 6;
+
+}
+
+section {
+  position: relative;
+
+}
+
+figure {
+
 }
 ul {
-  display: inline;
-  margin-top: 50px;
-  float: left;
+  list-style-type: none;
 }
-nav {
+article header {
+
+}
+.left {
+  background-color: lightblue;
+  position: absolute;
   display: inline-block;
-  width: 1000px;
-  max-width: 500px;
-  margin-left: -800px;
-  margin-top: 500px;
+  width: 20%;
+  margin-left: 5%;
+  float: left;
+  padding: 2%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.center {
+  position: relative;
+  display: inline-block;
+  width: 70%;
+  margin-left: 30%;
+  margin-bottom: 70px;
+  margin-right: 5%;
+
+
+}
+
+.right {
+  position: relative;
+  display: inline-block;
+  width: 0%;
+  float: right;
+
+}
+.menu li {
+  display: inline;
+}
+
+img {
+  width: 300px
+}
+img.banner {
+  position: absolute;
+  width: 100%;
+ top: 0;
+  max-height: 600px;
+  box-shadow: 1px 5px 5px #88888880;
+  z-index:4;
+  overflow: hidden;
+
+}
+.review header {
+  height: 100px;
+  background-color: lightblue;
+  padding: 1%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+}
+.review img {
+  position:relative;
+  float: left;
+  display: inline;
+  width:70px;
+  margin-left: 5%;
+  margin-top: 2%;
+
+}
+.review h1{
+  display: inline;
+    float:right;
+    margin: 2%;
+    text-align: justify;
+    width: 70%;
+
+}
+.review p {
+  display: inline-block;
+  margin: 1%;
+  min-height: 100px;
+  }
+  .review div {
+    background-color: #cdeaf3;
+    padding: 6%;
+  }
+  .drop-down div {
+    height: 400px;
+    background-color: #cdeaf3;
+    display: block;
+    position: relative;
+
+
+  }
+  #restroomStats h1 {
+    margin-bottom: 0px;
+    text-align: left;
+  }
+  #restroomStats ul {
+    margin-top: 0px;
+    margin-bottom: 3px;
+    background-color: #cdeaf3;
+  }
+#restroomStats li {
+  display: block;
+  background-color: #cdeaf3;
+
+}
+#user-info li {
+  display: inline;
 }
 .submit {
 	-moz-box-shadow:inset 0px 0px 15px 3px #23395e;
@@ -147,159 +264,13 @@ nav {
 	background:-ms-linear-gradient(top, #2e466e 5%, #415989 100%);
 	background:linear-gradient(to bottom, #2e466e 5%, #415989 100%);
 }
-#search {
-  position: absolute;
-  top: 32.5%;
-  margin-left: -5%;
-}
-button {
-  position: relative;
-  top: 5%;
-  /*margin-left: 900px;*/
-  display: block;
-  padding-top: 30px;
-}
-.about {
-  font-family: fantasy;
+#login {
   text-align: center;
-  text-shadow: 5px;
-  font-size: 20px;
-  margin-left: 350px;
-  margin-right: 350px;
-}
-
-.blog1{
-  text-align: center;
-  margin-left: 500px;
-}
-.blog2 {
-  height: auto;
-  margin-left: auto;
-}
-.blog3{
-  text-align: center;
-  margin-left: 0px;
-}
-li {
-  display: inline;
-  margin-left: 5%;
-  position: relative;
-  margin-top: 50px;
-}
-#homeLogo {
-  max-width: 33%;
-  height: 75px;
-  position: absolute;
-  margin-top: 0.2%;
-  margin-left: 1%;
-  display: inline-block;
-  border-radius: 70px;
-}
-img {
-  border-radius: 70px;
-  max-width: 33%;
-  height: 130px;
-}
-
-
-sidebar {
-  float: left;
-  text-align: left;
-}
-
-a.nav {
-  display: inline;
-  font-size: 20px;
-  width: 50px;
-  color: black;
-  text-decoration: none;
-  font-style: normal;
-  margin-top: 15px;
-}
-a.nav:hover {
-  border-radius: 5px;
-}
-a.nav:active {
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 10px 10000px rgba(0,0,0,0.025);
-}
-a {
-  text-decoration: underline;
-  font-style: italic;
-  color: red;
-}
-a:visited {
-}
-#blogs {
-  text: white;
-  font-size: 20px;
-  border-style: solid;
-  border-right: 10px;
-  /*border-left:10px;*/
-  border-color: rgb(100, 101, 102);
-  padding: 30px;
-
-}
-.avatar {
-  box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.15);
-  border-radius: 65px;
-  margin-left: 75px;
-  margin-top: 60px;
-  float: left;
-}
-.avatar2 {
-  margin-left: 3%;
-  margin-top: -0.5%;
-  box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.15);
-  border-radius: 65px;
-  float: left;
-}
-hr{
-  border-top: 20px;
-  color: red;
-}
-body {
-    color: white;
-}
-p{
-  max-width: 750px;
-  padding-left: 250px;
 }
 input {
-  max-width: 300px;
-  /*position: relative;
-  display: block;
-  margin-top: -15px;
-  margin-left: 960px;
-  padding-bottom: 0;*/
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-select {
-  /*display: block;
-  position: relative;*/
-  /*left:200px;
-  top: -17px;
-  padding-bottom: 0;
-  width: 130px;*/
-}
-label {
-  font-size: 20px;
-  width: 200px;
-
-  /*margin-left: 350px;*/
-  padding-bottom: 0;
-  text-align: right;
-}
-#submit {
-  margin-left: 47%;
-}
-#homeH1 {
-  margin-left: 55%;
-  float: right;
-  margin-right: 1%;
-  margin-top: -2%;
-
-}
-.menu {
-  margin-left: 50%;
+#create {
+  margin-top: 15px;
 }
