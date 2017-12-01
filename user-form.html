@@ -2,18 +2,26 @@
 <html>
 <head>
   <title>Go on the Go!</title>
-  <link href="user-form.css" rel="stylesheet"></link>
+  <link href="user-form-redux.css" rel="stylesheet"></link>
 </head>
 <body>
-  <header>
-    <h1>Go on the Go</h1>
+  <header class = "main">
+    <div class = "header-left">
+        <h1>Go on the Go</h1>
+    </div>
+  <div class="header-right">
+    <ul class="navLinks">
+      <li><a href="welcome.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+    </ul>
+  </div>
+
   </header>
-  <ul class="navLinks">
-    <li><a href="welcome.html">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="reviews.html">Reviews</a></li>
-  </ul>
+
   <main>
+    <article class="review">
+
     <fieldset id="main-fieldset">
       <form id="main-form">
         <label>User Name:</label>
@@ -35,6 +43,7 @@
         <button class="submit" id="submit" type="submit" onclick="location.href = 'userReviews.html'">Submit!</button>
       </form>
     </fieldset>
+  </article>
   </form>
 </main>
 <footer>
