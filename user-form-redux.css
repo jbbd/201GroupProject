@@ -39,12 +39,12 @@ header li {
   display: inline;
   padding-left: 5%;
 }
-article.review {
+#main-fieldset {
   background-color: #fffffff5;
+  width: 40%;
+  margin: 50px auto;
   position: relative;
-  margin-top: 400px;
-  padding-top: 30px;
-  box-shadow: 5px -5px 5px #88888880;
+  box-shadow: 5px 5px 5px #88888880;
   z-index: 6;
 
 }
@@ -151,23 +151,12 @@ img.banner {
 
 
   }
-  #restroomStats h1 {
-    margin-bottom: 0px;
-    text-align: left;
-  }
-  #restroomStats ul {
-    margin-top: 0px;
-    margin-bottom: 3px;
-    background-color: #cdeaf3;
-  }
-#restroomStats li {
-  display: block;
-  background-color: #cdeaf3;
 
-}
-#user-info li {
-  display: inline;
-}
 #main-fieldset {
 background-color: lightblue;
+border: none;
+}
+.reviewBox {
+  height: 300px;
+  width: 500px;
 }
