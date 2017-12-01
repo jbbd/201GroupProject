@@ -41,7 +41,7 @@ header li {
 article.review {
   background-color: #ffffffb5;
   position: relative;
-  margin-top: 700px;
+  margin-top: 200px;
   z-index: 5;
 
 }
@@ -61,28 +61,34 @@ article header {
 
 }
 .left {
-  position: relative;
+  background-color: lightblue;
+  position: absolute;
   display: inline-block;
   width: 20%;
+  margin-left: 5%;
   float: left;
 }
 .center {
   position: relative;
   display: inline-block;
-  width: 49%;
+  width: 70%;
+  margin-left: 30%;
+  margin-bottom: 70px;
+  margin-right: 5%;
 
 }
 
 .right {
   position: relative;
   display: inline-block;
-  width: 29%;
+  width: 0%;
   float: right;
 
 }
 .menu li {
   display: inline;
 }
+
 img {
   width: 300px
 }
@@ -93,12 +99,50 @@ img.banner {
   z-index:1;
   overflow: hidden;
 }
+.review header {
+  height: 100px;
+  background-color: lightblue;
+  padding: 1%;
+  overflow: hidden;
+}
+.review img {
+  position:relative;
+  float: left;
+  display: inline;
+  width:70px;
+  margin-left: 5%;
+  margin-top: 2%;
 
-#stats li {
+}
+.review h1{
+  display: inline;
+    float:right;
+    margin: 2%;
+    text-align: justify;
+    width: 70%;
+
+}
+.review p {
+  display: inline-block;
+  margin: 1%;
+  }
+  .review div {
+    background-color: #cdeaf3;
+    padding: 6%;
+  }
+  #restroomStats h1 {
+    margin-bottom: 0px;
+    text-align: left;
+  }
+  #restroomStats ul {
+    margin-top: 0px;
+
+  }
+#restroomStats li {
   display: block;
+  background-color: #cdeaf3;
 
 }
 #user-info li {
   display: inline;
-
 }

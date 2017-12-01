@@ -1,5 +1,6 @@
 'use strict';
 //Feel free to modify
+var avatarArray = ['assets/avatar1.png', 'assets/avatar2.png', 'assets/avatar3.png', 'assets/avatar4.png', 'assets/avatar5.png', 'assets/avatar6.png', 'assets/avatar7.png', 'assets/avatar8.png'];
 var keyArray = ['Name: ', 'Address: ', 'Over-All Rating ', 'Single Stall? ', 'Multi Stall? ', 'Stall Width: ', 'Handicap Accessible? ', 'Gender Neutral Option? ', 'Changing Station? ', 'Product Dispensers? ', 'Toilet Paper? '];
 var restroomList = []; //stores all restroom instances
 //var userRestrooms = []; //list of restrooms based on user specs
@@ -33,6 +34,7 @@ function User(username, review, location, rating){
   console.log('what user reviews we have: ', restroomReview);
   //this.getUserRating();
 }
+
 // function User(username, review, restroomName){
 //   this.username = username;
 //   //this.numOfReviews = totalReviews;MAKE STRETCH GOAL
@@ -47,8 +49,12 @@ User.prototype.printCustHeader = function(){
   var newHeaderEl = document.createElement('header');
   var newThing = document.createElement('h1');
   var userHeader = document.createTextNode ('NAME: ' + this.username + '  Location: ' + this.location);
+  var userAvatar = document.createElement('img');
+  var i = Math.floor(Math.random() * 9);
+  console.log('random number: ', i);
   newThing.appendChild(userHeader);
   newHeaderEl.appendChild(newThing);
+  newHeaderEl.appendChild(userAvatar).src = avatarArray[i];
   pCust.appendChild(newHeaderEl);
 };
 User.prototype.printCustReview = function(){
