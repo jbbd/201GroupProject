@@ -46,7 +46,7 @@ User.prototype.printCustHeader = function(){
   var pCust = document.getElementById('review-list');
   var newHeaderEl = document.createElement('header');
   var newThing = document.createElement('h1');
-  var userHeader = document.createTextNode ('NAME: ' + this.username + '  Location: ' + this.restroomName);
+  var userHeader = document.createTextNode ('NAME: ' + this.username + '  Location: ' + this.location);
   newThing.appendChild(userHeader);
   newHeaderEl.appendChild(newThing);
   pCust.appendChild(newHeaderEl);
@@ -124,11 +124,16 @@ function printRestrooms () {
   for (var i = 0; i < restroomList.length; i++) {
     restroomList[i].printRestroomHeader();
     console.log('restroomList at i', restroomList[i]);
-    for (var j = 0; j < keyArray.length; j++) {
-      restroomList[i].printRestroomStats(keyArray[j], restroomList[i][j]);
-      console.log('j is: ', j);
-      console.log('keyArray at j', keyArray[j]);
-    }
+    restroomList[i].printRestroomStats(keyArray[1], restroomList[i].address);
+    restroomList[i].printRestroomStats(keyArray[2], restroomList[i].clean);
+    restroomList[i].printRestroomStats(keyArray[3], restroomList[i].singleStall);
+    restroomList[i].printRestroomStats(keyArray[4], restroomList[i].multiStall);
+    restroomList[i].printRestroomStats(keyArray[5], restroomList[i].size);
+    restroomList[i].printRestroomStats(keyArray[6], restroomList[i].hAccess);
+    restroomList[i].printRestroomStats(keyArray[7], restroomList[i].genderNeutral);
+    restroomList[i].printRestroomStats(keyArray[8], restroomList[i].changingStation);
+    restroomList[i].printRestroomStats(keyArray[9], restroomList[i].dispensers);
+    restroomList[i].printRestroomStats(keyArray[10], restroomList[i].toiletPaper);
   }
 }
 function printUsers (){
@@ -154,7 +159,7 @@ new Restroom('Midgard', '123 North cha cha', true, true, false, 'big', true,
 
 
 printRestrooms();
-new User (userData[0][0], userData[0][1], userData[0][2], userData[0][3]);
+//new User (userData[0][0], userData[0][1], userData[0][2], userData[0][3]);
 new User('tinkleBell', loremIpsum, restroomList[2].name);
 new User('WestCoastBestCoast', loremIpsum, restroomList[2].name);
 new User('RowdyRuffGurl', loremIpsum, restroomList[1].name);
