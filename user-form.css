@@ -2,28 +2,7 @@ html{
   background-color: #21428F;
 }
 
-.navLinks{
-  color: red;
-  font-size: 80px;
-  text-align: center;
-  text-decoration: underline;
-  font-style: italic;
-  display: inline-flex;
-}
-
-#login{
-  margin-left: 400px;
-}
-
-header {
-  min-height: 50px;
-  background-color: red;
-  height: 100px;
-  margin-bottom: 20px;
-}
-
-h1 {
-  position:
+h1{
   font-size: 80px;
   text-align: center;
   color: white;
@@ -31,9 +10,34 @@ h1 {
 }
 
 fieldset{
-  margin-top: 180px;
+  margin-top: 10px;
   text-align: center;
   font-size: 40px;
+}
+
+a{
+  text-decoration: underline;
+color: red;
+margin-left: 200px;
+}
+
+ul{
+  list-style: none;
+  text-decoration: underline;
+}
+
+.navLinks{
+  color: red;
+  font-size: 60px;
+  text-align: center;
+  font-style: italic;
+  display: inline-flex;
+}
+
+header{
+  min-height: 60px;
+  background-color: red;
+
 }
 
 .submit {
@@ -91,52 +95,7 @@ button {
   display: block;
   padding-top: 30px;
 }
-.about {
-  font-family: fantasy;
-  text-align: center;
-  text-shadow: 5px;
-  font-size: 20px;
-  margin-left: 350px;
-  margin-right: 350px;
-}
-
-.blog1{
-  text-align: center;
-  margin-left: 500px;
-}
-.blog2 {
-  height: auto;
-  margin-left: auto;
-}
-.blog3{
-  text-align: center;
-  margin-left: 0px;
-}
-
-#homeLogo {
-  max-width: 33%;
-  height: 75px;
-  position: absolute;
-  margin-top: 0.2%;
-  margin-left: 1%;
-  display: inline-block;
-  border-radius: 70px;
-}
 
 body {
     color: white;
-}
-
-#submit {
-  margin-left: 47%;
-}
-#homeH1 {
-  margin-left: 55%;
-  float: right;
-  margin-right: 1%;
-  margin-top: -2%;
-
-}
-.menu {
-  margin-left: 50%;
 }
